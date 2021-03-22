@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 
 namespace API
 {
@@ -63,7 +64,7 @@ namespace API
                    spa.Options.SourcePath = "client";
                    if (env.IsDevelopment())
                    {
-                       spa.useReactDevelopmentServer(npmScript: "start");
+                       spa.UseReactDevelopmentServer(npmScript: "start");
                    }
                });
             }

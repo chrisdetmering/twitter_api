@@ -14,17 +14,17 @@
         "outputPath": "/Users/bryankrauss/Documents/sdmm/twitter_api/API/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/bryankrauss/.config/NuGet/NuGet.Config"
+          "/Users/bryankrauss/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net5.0.4"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net5.0.4": {
+            "targetAlias": "net5.0.4",
             "projectReferences": {
               "/Users/bryankrauss/Documents/sdmm/twitter_api/Infrastructure/Infrastructure.csproj": {
                 "projectPath": "/Users/bryankrauss/Documents/sdmm/twitter_api/Infrastructure/Infrastructure.csproj"
@@ -39,8 +39,8 @@
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net5.0.4": {
+          "targetAlias": "net5.0.4",
           "dependencies": {
             "Microsoft.AspNetCore.SpaServices.Extensions": {
               "target": "Package",
@@ -83,17 +83,17 @@
         "outputPath": "/Users/bryankrauss/Documents/sdmm/twitter_api/Core/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/bryankrauss/.config/NuGet/NuGet.Config"
+          "/Users/bryankrauss/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net5.0.4"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net5.0.4": {
+            "targetAlias": "net5.0.4",
             "projectReferences": {}
           }
         },
@@ -104,8 +104,8 @@
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net5.0.4": {
+          "targetAlias": "net5.0.4",
           "imports": [
             "net461",
             "net462",
@@ -135,17 +135,17 @@
         "outputPath": "/Users/bryankrauss/Documents/sdmm/twitter_api/Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/bryankrauss/.config/NuGet/NuGet.Config"
+          "/Users/bryankrauss/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net5.0.4"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net5.0.4": {
+            "targetAlias": "net5.0.4",
             "projectReferences": {
               "/Users/bryankrauss/Documents/sdmm/twitter_api/Core/Core.csproj": {
                 "projectPath": "/Users/bryankrauss/Documents/sdmm/twitter_api/Core/Core.csproj"
@@ -160,8 +160,8 @@
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net5.0.4": {
+          "targetAlias": "net5.0.4",
           "imports": [
             "net461",
             "net462",
