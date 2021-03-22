@@ -29,7 +29,7 @@ namespace API
         {
 
             services.AddControllers();
-            services.AddSpaStaticFiles(configuration: config :SpaStaticFilesOptions =>
+            services.AddSpaStaticFiles(config =>
           {
               config.RootPath = "client/build";
           });
