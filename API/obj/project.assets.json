@@ -1,17 +1,17 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {
-      "Microsoft.AspNetCore.SpaServices.Extensions/5.0.4": {
+    "net6.0": {
+      "Microsoft.AspNetCore.SpaServices.Extensions/6.0.0-preview.2.21154.6": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.FileProviders.Physical": "5.0.0"
+          "Microsoft.Extensions.FileProviders.Physical": "6.0.0-preview.2.21154.6"
         },
         "compile": {
-          "lib/net5.0/Microsoft.AspNetCore.SpaServices.Extensions.dll": {}
+          "lib/net6.0/Microsoft.AspNetCore.SpaServices.Extensions.dll": {}
         },
         "runtime": {
-          "lib/net5.0/Microsoft.AspNetCore.SpaServices.Extensions.dll": {}
+          "lib/net6.0/Microsoft.AspNetCore.SpaServices.Extensions.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
@@ -28,10 +28,10 @@
           "buildMultiTargeting/Microsoft.Extensions.ApiDescription.Server.targets": {}
         }
       },
-      "Microsoft.Extensions.FileProviders.Abstractions/5.0.0": {
+      "Microsoft.Extensions.FileProviders.Abstractions/6.0.0-preview.2.21154.6": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.Primitives": "5.0.0"
+          "Microsoft.Extensions.Primitives": "6.0.0-preview.2.21154.6"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Abstractions.dll": {}
@@ -40,12 +40,12 @@
           "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Abstractions.dll": {}
         }
       },
-      "Microsoft.Extensions.FileProviders.Physical/5.0.0": {
+      "Microsoft.Extensions.FileProviders.Physical/6.0.0-preview.2.21154.6": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.FileProviders.Abstractions": "5.0.0",
-          "Microsoft.Extensions.FileSystemGlobbing": "5.0.0",
-          "Microsoft.Extensions.Primitives": "5.0.0"
+          "Microsoft.Extensions.FileProviders.Abstractions": "6.0.0-preview.2.21154.6",
+          "Microsoft.Extensions.FileSystemGlobbing": "6.0.0-preview.2.21154.6",
+          "Microsoft.Extensions.Primitives": "6.0.0-preview.2.21154.6"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Physical.dll": {}
@@ -54,7 +54,7 @@
           "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Physical.dll": {}
         }
       },
-      "Microsoft.Extensions.FileSystemGlobbing/5.0.0": {
+      "Microsoft.Extensions.FileSystemGlobbing/6.0.0-preview.2.21154.6": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Microsoft.Extensions.FileSystemGlobbing.dll": {}
@@ -63,8 +63,11 @@
           "lib/netstandard2.0/Microsoft.Extensions.FileSystemGlobbing.dll": {}
         }
       },
-      "Microsoft.Extensions.Primitives/5.0.0": {
+      "Microsoft.Extensions.Primitives/6.0.0-preview.2.21154.6": {
         "type": "package",
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0-preview.2.21154.6"
+        },
         "compile": {
           "lib/netcoreapp3.0/Microsoft.Extensions.Primitives.dll": {}
         },
@@ -135,9 +138,18 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+      "System.Runtime.CompilerServices.Unsafe/6.0.0-preview.2.21154.6": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.1/System.Runtime.CompilerServices.Unsafe.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+        }
+      },
       "Core/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
+        "framework": ".NETCoreApp,Version=v6.0",
         "compile": {
           "bin/placeholder/Core.dll": {}
         },
@@ -147,7 +159,7 @@
       },
       "Infrastructure/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
+        "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Core": "1.0.0"
         },
@@ -161,17 +173,17 @@
     }
   },
   "libraries": {
-    "Microsoft.AspNetCore.SpaServices.Extensions/5.0.4": {
-      "sha512": "R/4sMcLMIPHhixGMb/JJHNprVvcB58W776G1gyJDRPGM7K4pzfPpXyGBv6RLlzSXxxUn+J/02tmCvFUtkLs7Bg==",
+    "Microsoft.AspNetCore.SpaServices.Extensions/6.0.0-preview.2.21154.6": {
+      "sha512": "RK9Dqr+i/99p6188k7jb0/XKTDuT+ETmGXacQ38pmgMYOkRh/Z2tcI1Gx87A+aPDApRHebEfeUNFr6auviSiEA==",
       "type": "package",
-      "path": "microsoft.aspnetcore.spaservices.extensions/5.0.4",
+      "path": "microsoft.aspnetcore.spaservices.extensions/6.0.0-preview.2.21154.6",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "THIRD-PARTY-NOTICES.TXT",
-        "lib/net5.0/Microsoft.AspNetCore.SpaServices.Extensions.dll",
-        "microsoft.aspnetcore.spaservices.extensions.5.0.4.nupkg.sha512",
+        "lib/net6.0/Microsoft.AspNetCore.SpaServices.Extensions.dll",
+        "microsoft.aspnetcore.spaservices.extensions.6.0.0-preview.2.21154.6.nupkg.sha512",
         "microsoft.aspnetcore.spaservices.extensions.nuspec"
       ]
     },
@@ -202,10 +214,10 @@
         "tools/netcoreapp2.1/GetDocument.Insider.runtimeconfig.json"
       ]
     },
-    "Microsoft.Extensions.FileProviders.Abstractions/5.0.0": {
-      "sha512": "iuZIiZ3mteEb+nsUqpGXKx2cGF+cv6gWPd5jqQI4hzqdiJ6I94ddLjKhQOuRW1lueHwocIw30xbSHGhQj0zjdQ==",
+    "Microsoft.Extensions.FileProviders.Abstractions/6.0.0-preview.2.21154.6": {
+      "sha512": "YFFoSlxkCTie4AqZ1TPizFLKV76WIxi8VIspZH5z64x+vC/ftpFAFHesMQjy1TceEJoCTwF0uJpbFsYEoIBtWg==",
       "type": "package",
-      "path": "microsoft.extensions.fileproviders.abstractions/5.0.0",
+      "path": "microsoft.extensions.fileproviders.abstractions/6.0.0-preview.2.21154.6",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -216,16 +228,14 @@
         "lib/net461/Microsoft.Extensions.FileProviders.Abstractions.xml",
         "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Abstractions.dll",
         "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Abstractions.xml",
-        "microsoft.extensions.fileproviders.abstractions.5.0.0.nupkg.sha512",
-        "microsoft.extensions.fileproviders.abstractions.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
+        "microsoft.extensions.fileproviders.abstractions.6.0.0-preview.2.21154.6.nupkg.sha512",
+        "microsoft.extensions.fileproviders.abstractions.nuspec"
       ]
     },
-    "Microsoft.Extensions.FileProviders.Physical/5.0.0": {
-      "sha512": "1rkd8UO2qf21biwO7X0hL9uHP7vtfmdv/NLvKgCRHkdz1XnW8zVQJXyEYiN68WYpExgtVWn55QF0qBzgfh1mGg==",
+    "Microsoft.Extensions.FileProviders.Physical/6.0.0-preview.2.21154.6": {
+      "sha512": "Dk7LEfWcspe2fXML3UqUvkgYuMQ+FEIL0g0jPjz7dCJyC3g+k+plhhN6E7V0qPhsPCRHCCoPAExEVsDn4TBBOA==",
       "type": "package",
-      "path": "microsoft.extensions.fileproviders.physical/5.0.0",
+      "path": "microsoft.extensions.fileproviders.physical/6.0.0-preview.2.21154.6",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -236,16 +246,14 @@
         "lib/net461/Microsoft.Extensions.FileProviders.Physical.xml",
         "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Physical.dll",
         "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Physical.xml",
-        "microsoft.extensions.fileproviders.physical.5.0.0.nupkg.sha512",
-        "microsoft.extensions.fileproviders.physical.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
+        "microsoft.extensions.fileproviders.physical.6.0.0-preview.2.21154.6.nupkg.sha512",
+        "microsoft.extensions.fileproviders.physical.nuspec"
       ]
     },
-    "Microsoft.Extensions.FileSystemGlobbing/5.0.0": {
-      "sha512": "ArliS8lGk8sWRtrWpqI8yUVYJpRruPjCDT+EIjrgkA/AAPRctlAkRISVZ334chAKktTLzD1+PK8F5IZpGedSqA==",
+    "Microsoft.Extensions.FileSystemGlobbing/6.0.0-preview.2.21154.6": {
+      "sha512": "+F7sNpOdh1SdjANW5Wtfr/mji6BAAa+922vvH4BrRpqE/yEa7hrJzgK7EnLlcRacD7IVjNoI0uankKFTCeARoA==",
       "type": "package",
-      "path": "microsoft.extensions.filesystemglobbing/5.0.0",
+      "path": "microsoft.extensions.filesystemglobbing/6.0.0-preview.2.21154.6",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -256,16 +264,14 @@
         "lib/net461/Microsoft.Extensions.FileSystemGlobbing.xml",
         "lib/netstandard2.0/Microsoft.Extensions.FileSystemGlobbing.dll",
         "lib/netstandard2.0/Microsoft.Extensions.FileSystemGlobbing.xml",
-        "microsoft.extensions.filesystemglobbing.5.0.0.nupkg.sha512",
-        "microsoft.extensions.filesystemglobbing.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
+        "microsoft.extensions.filesystemglobbing.6.0.0-preview.2.21154.6.nupkg.sha512",
+        "microsoft.extensions.filesystemglobbing.nuspec"
       ]
     },
-    "Microsoft.Extensions.Primitives/5.0.0": {
-      "sha512": "cI/VWn9G1fghXrNDagX9nYaaB/nokkZn0HYAawGaELQrl8InSezfe9OnfPZLcJq3esXxygh3hkq2c3qoV3SDyQ==",
+    "Microsoft.Extensions.Primitives/6.0.0-preview.2.21154.6": {
+      "sha512": "oZeJXKvE+lgHGph7uPcKHj3VEfbKnEoLUrpWb4JRu2DPwX/dDowjicnadjF795/C+sWnbK+ypir2h+sG5zRIfw==",
       "type": "package",
-      "path": "microsoft.extensions.primitives/5.0.0",
+      "path": "microsoft.extensions.primitives/6.0.0-preview.2.21154.6",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -278,10 +284,8 @@
         "lib/netcoreapp3.0/Microsoft.Extensions.Primitives.xml",
         "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll",
         "lib/netstandard2.0/Microsoft.Extensions.Primitives.xml",
-        "microsoft.extensions.primitives.5.0.0.nupkg.sha512",
-        "microsoft.extensions.primitives.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
+        "microsoft.extensions.primitives.6.0.0-preview.2.21154.6.nupkg.sha512",
+        "microsoft.extensions.primitives.nuspec"
       ]
     },
     "Microsoft.OpenApi/1.2.3": {
@@ -364,6 +368,36 @@
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
     },
+    "System.Runtime.CompilerServices.Unsafe/6.0.0-preview.2.21154.6": {
+      "sha512": "gDKgU126IOgRC3269+m5dnEKfoI1z16Ssl4DJfKVNrXJ+SBKrE5Aiys+qoMjDctHd05ARbUeVj45Pe8arG/Saw==",
+      "type": "package",
+      "path": "system.runtime.compilerservices.unsafe/6.0.0-preview.2.21154.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net45/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/net45/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "ref/net461/System.Runtime.CompilerServices.Unsafe.dll",
+        "ref/net461/System.Runtime.CompilerServices.Unsafe.xml",
+        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "ref/netstandard2.1/System.Runtime.CompilerServices.Unsafe.dll",
+        "ref/netstandard2.1/System.Runtime.CompilerServices.Unsafe.xml",
+        "system.runtime.compilerservices.unsafe.6.0.0-preview.2.21154.6.nupkg.sha512",
+        "system.runtime.compilerservices.unsafe.nuspec"
+      ]
+    },
     "Core/1.0.0": {
       "type": "project",
       "path": "../Core/Core.csproj",
@@ -376,9 +410,9 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net5.0": [
+    "net6.0": [
       "Infrastructure >= 1.0.0",
-      "Microsoft.AspNetCore.SpaServices.Extensions >= 5.0.4",
+      "Microsoft.AspNetCore.SpaServices.Extensions >= 6.0.0-preview.2.21154.6",
       "Swashbuckle.AspNetCore >= 5.6.3"
     ]
   },
@@ -395,17 +429,17 @@
       "outputPath": "/Users/bryankrauss/Documents/sdmm/twitter_api/API/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/bryankrauss/.nuget/NuGet/NuGet.Config"
+        "/Users/bryankrauss/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
-        "net5.0"
+        "net6.0"
       ],
       "sources": {
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
+        "net6.0": {
+          "targetAlias": "net6.0",
           "projectReferences": {
             "/Users/bryankrauss/Documents/sdmm/twitter_api/Infrastructure/Infrastructure.csproj": {
               "projectPath": "/Users/bryankrauss/Documents/sdmm/twitter_api/Infrastructure/Infrastructure.csproj"
@@ -420,12 +454,12 @@
       }
     },
     "frameworks": {
-      "net5.0": {
-        "targetAlias": "net5.0",
+      "net6.0": {
+        "targetAlias": "net6.0",
         "dependencies": {
           "Microsoft.AspNetCore.SpaServices.Extensions": {
             "target": "Package",
-            "version": "[5.0.4, )"
+            "version": "[6.0.0-preview.2.21154.6, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",

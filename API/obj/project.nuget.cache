@@ -1,20 +1,21 @@
 {
   "version": 2,
-  "dgSpecHash": "7BfexdqbAYqDZTAcrymRCMFMmRlyN5zHleknJgoeyYST6DHcaTtXBC4j93kxxXSTbii614oUEk5RY86XT9XiwA==",
+  "dgSpecHash": "9xmwdwLy/u/mbOMsgTY8WZ+qjT/iKz7KbIr8wWw2HiG8OYd/m2BmPuUNQJpmPfGuA+y9umfBHsjPkDGZdEOc8g==",
   "success": true,
   "projectFilePath": "/Users/bryankrauss/Documents/sdmm/twitter_api/API/API.csproj",
   "expectedPackageFiles": [
-    "/Users/bryankrauss/.nuget/packages/microsoft.aspnetcore.spaservices.extensions/5.0.4/microsoft.aspnetcore.spaservices.extensions.5.0.4.nupkg.sha512",
+    "/Users/bryankrauss/.nuget/packages/microsoft.aspnetcore.spaservices.extensions/6.0.0-preview.2.21154.6/microsoft.aspnetcore.spaservices.extensions.6.0.0-preview.2.21154.6.nupkg.sha512",
     "/Users/bryankrauss/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
-    "/Users/bryankrauss/.nuget/packages/microsoft.extensions.fileproviders.abstractions/5.0.0/microsoft.extensions.fileproviders.abstractions.5.0.0.nupkg.sha512",
-    "/Users/bryankrauss/.nuget/packages/microsoft.extensions.fileproviders.physical/5.0.0/microsoft.extensions.fileproviders.physical.5.0.0.nupkg.sha512",
-    "/Users/bryankrauss/.nuget/packages/microsoft.extensions.filesystemglobbing/5.0.0/microsoft.extensions.filesystemglobbing.5.0.0.nupkg.sha512",
-    "/Users/bryankrauss/.nuget/packages/microsoft.extensions.primitives/5.0.0/microsoft.extensions.primitives.5.0.0.nupkg.sha512",
+    "/Users/bryankrauss/.nuget/packages/microsoft.extensions.fileproviders.abstractions/6.0.0-preview.2.21154.6/microsoft.extensions.fileproviders.abstractions.6.0.0-preview.2.21154.6.nupkg.sha512",
+    "/Users/bryankrauss/.nuget/packages/microsoft.extensions.fileproviders.physical/6.0.0-preview.2.21154.6/microsoft.extensions.fileproviders.physical.6.0.0-preview.2.21154.6.nupkg.sha512",
+    "/Users/bryankrauss/.nuget/packages/microsoft.extensions.filesystemglobbing/6.0.0-preview.2.21154.6/microsoft.extensions.filesystemglobbing.6.0.0-preview.2.21154.6.nupkg.sha512",
+    "/Users/bryankrauss/.nuget/packages/microsoft.extensions.primitives/6.0.0-preview.2.21154.6/microsoft.extensions.primitives.6.0.0-preview.2.21154.6.nupkg.sha512",
     "/Users/bryankrauss/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
     "/Users/bryankrauss/.nuget/packages/swashbuckle.aspnetcore/5.6.3/swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
     "/Users/bryankrauss/.nuget/packages/swashbuckle.aspnetcore.swagger/5.6.3/swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
     "/Users/bryankrauss/.nuget/packages/swashbuckle.aspnetcore.swaggergen/5.6.3/swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
-    "/Users/bryankrauss/.nuget/packages/swashbuckle.aspnetcore.swaggerui/5.6.3/swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+    "/Users/bryankrauss/.nuget/packages/swashbuckle.aspnetcore.swaggerui/5.6.3/swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512",
+    "/Users/bryankrauss/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0-preview.2.21154.6/system.runtime.compilerservices.unsafe.6.0.0-preview.2.21154.6.nupkg.sha512"
   ],
   "logs": []
 }
