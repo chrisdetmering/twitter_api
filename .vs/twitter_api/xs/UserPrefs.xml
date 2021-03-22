@@ -1,22 +1,11 @@
 ﻿<Properties StartupConfiguration="{2E9EEF21-830D-4E8B-B186-89ABBD432C40}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Infrastructure/Infrastructure.csproj">
+  <MonoDevelop.Ide.Workbench ActiveDocument="API/Startup.cs">
     <Files>
-      <File FileName="API/Startup.cs" Line="66" Column="84" />
-      <File FileName="Infrastructure/Infrastructure.csproj" Line="8" Column="26" />
-      <File FileName="API/API.csproj" Line="9" Column="89" />
-      <File FileName="Core/Core.csproj" Line="1" Column="1" />
+      <File FileName="API/Startup.cs" Line="14" Column="63" />
+      <File FileName="Infrastructure/Infrastructure.csproj" />
+      <File FileName="API/API.csproj" />
+      <File FileName="Core/Core.csproj" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="twitter_api" expanded="True">
-            <Node name="API" expanded="True" />
-            <Node name="Core" expanded="True" />
-            <Node name="Infrastructure" selected="True" />
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.API PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

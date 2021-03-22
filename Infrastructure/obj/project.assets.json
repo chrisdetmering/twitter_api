@@ -1,10 +1,10 @@
 {
   "version": 3,
   "targets": {
-    "net5.0.4": {
+    "net5.0": {
       "Core/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0.4",
+        "framework": ".NETCoreApp,Version=v5.0",
         "compile": {
           "bin/placeholder/Core.dll": {}
         },
@@ -22,7 +22,7 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net5.0.4": [
+    "net5.0": [
       "Core >= 1.0.0"
     ]
   },
@@ -42,14 +42,14 @@
         "/Users/bryankrauss/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
-        "net5.0.4"
+        "net5.0"
       ],
       "sources": {
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net5.0.4": {
-          "targetAlias": "net5.0.4",
+        "net5.0": {
+          "targetAlias": "net5.0",
           "projectReferences": {
             "/Users/bryankrauss/Documents/sdmm/twitter_api/Core/Core.csproj": {
               "projectPath": "/Users/bryankrauss/Documents/sdmm/twitter_api/Core/Core.csproj"
@@ -64,8 +64,8 @@
       }
     },
     "frameworks": {
-      "net5.0.4": {
-        "targetAlias": "net5.0.4",
+      "net5.0": {
+        "targetAlias": "net5.0",
         "imports": [
           "net461",
           "net462",
