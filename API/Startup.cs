@@ -29,10 +29,11 @@ namespace API
         {
 
             services.AddControllers();
-            services.AddSpaStaticFiles( configuration: config :SpaStaticFilesOptions =>
-           {
-               config.RootPath = "client/build";
-           });
+            services.AddSpaStaticFiles(configuration: config :SpaStaticFilesOptions =>
+          {
+              config.RootPath = "client/build";
+          });
+        }
 
             // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
             public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
