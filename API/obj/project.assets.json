@@ -435,7 +435,7 @@
       "outputPath": "/Users/bryankrauss/Documents/sdmm/twitter_api/API/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/bryankrauss/.config/NuGet/NuGet.Config"
+        "/Users/bryankrauss/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
