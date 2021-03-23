@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "9xmwdwLy/u/mbOMsgTY8WZ+qjT/iKz7KbIr8wWw2HiG8OYd/m2BmPuUNQJpmPfGuA+y9umfBHsjPkDGZdEOc8g==",
+  "dgSpecHash": "xtyjjTzWFVJe1SMXDFRpjSEpd3WOsCGXXRKDB3693n5GWKKWfYj/H+BUqlsVFvFAsj9yzRgq/W3psTsywgOqgg==",
   "success": true,
   "projectFilePath": "/Users/bryankrauss/Documents/sdmm/twitter_api/API/API.csproj",
   "expectedPackageFiles": [
@@ -11,10 +11,10 @@
     "/Users/bryankrauss/.nuget/packages/microsoft.extensions.filesystemglobbing/6.0.0-preview.2.21154.6/microsoft.extensions.filesystemglobbing.6.0.0-preview.2.21154.6.nupkg.sha512",
     "/Users/bryankrauss/.nuget/packages/microsoft.extensions.primitives/6.0.0-preview.2.21154.6/microsoft.extensions.primitives.6.0.0-preview.2.21154.6.nupkg.sha512",
     "/Users/bryankrauss/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
-    "/Users/bryankrauss/.nuget/packages/swashbuckle.aspnetcore/5.6.3/swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
-    "/Users/bryankrauss/.nuget/packages/swashbuckle.aspnetcore.swagger/5.6.3/swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
-    "/Users/bryankrauss/.nuget/packages/swashbuckle.aspnetcore.swaggergen/5.6.3/swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
-    "/Users/bryankrauss/.nuget/packages/swashbuckle.aspnetcore.swaggerui/5.6.3/swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512",
+    "/Users/bryankrauss/.nuget/packages/swashbuckle.aspnetcore/6.1.1/swashbuckle.aspnetcore.6.1.1.nupkg.sha512",
+    "/Users/bryankrauss/.nuget/packages/swashbuckle.aspnetcore.swagger/6.1.1/swashbuckle.aspnetcore.swagger.6.1.1.nupkg.sha512",
+    "/Users/bryankrauss/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.1.1/swashbuckle.aspnetcore.swaggergen.6.1.1.nupkg.sha512",
+    "/Users/bryankrauss/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.1.1/swashbuckle.aspnetcore.swaggerui.6.1.1.nupkg.sha512",
     "/Users/bryankrauss/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0-preview.2.21154.6/system.runtime.compilerservices.unsafe.6.0.0-preview.2.21154.6.nupkg.sha512"
   ],
   "logs": []
