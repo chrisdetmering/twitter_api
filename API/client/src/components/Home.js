@@ -1,4 +1,5 @@
 import React from 'react';
+import Search from './Search';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
 
@@ -13,6 +14,11 @@ function Home() {
                 <p className="lead">
                     <Router>
                         <Link className="btn btn-primary btn-lg" role="button" to="/search">Enter</Link>
+                        <Switch>
+                            <Route path="/search">
+                                <Search />
+                            </Route>
+                        </Switch>
                     </Router>
                 </p>
             </div>
