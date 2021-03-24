@@ -7,6 +7,7 @@
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="6.0.0-preview.2.21154.6" />
+    <PackageReference Include="bootstrap" Version="4.6.0" />
   </ItemGroup>
 
   <ItemGroup>

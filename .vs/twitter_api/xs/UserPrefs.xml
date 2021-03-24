@@ -1,20 +1,23 @@
 ﻿<Properties StartupConfiguration="{2E9EEF21-830D-4E8B-B186-89ABBD432C40}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="API/client/src/index.js">
     <Files>
       <File FileName="API/Program.cs" Line="23" Column="46" />
-      <File FileName="API/Startup.cs" Line="1" Column="1" />
-      <File FileName="API/Controllers/TweetsController.cs" Line="22" Column="12" />
-      <File FileName="API/Controllers/WeatherForecastController.cs" Line="1" Column="1" />
+      <File FileName="API/Startup.cs" />
+      <File FileName="API/Controllers/TweetsController.cs" />
+      <File FileName="API/Controllers/WeatherForecastController.cs" />
+      <File FileName="API/client/src/index.js" Line="6" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="twitter_api" expanded="True">
             <Node name="API" expanded="True">
-              <Node name="client" expanded="True" />
-              <Node name="Controllers" expanded="True">
-                <Node name="TweetsController.cs" selected="True" />
+              <Node name="client" expanded="True">
+                <Node name="src" expanded="True">
+                  <Node name="index.js" selected="True" />
+                </Node>
               </Node>
+              <Node name="Controllers" expanded="True" />
             </Node>
           </Node>
         </State>

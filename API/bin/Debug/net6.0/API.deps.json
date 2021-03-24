@@ -37,6 +37,7 @@
           "Infrastructure": "1.0.0",
           "Microsoft.AspNetCore.SpaServices.Extensions": "6.0.0-preview.2.21154.6",
           "Swashbuckle.AspNetCore": "6.1.1",
+          "bootstrap": "4.6.0",
           "Microsoft.AspNetCore.Antiforgery": "6.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "6.0.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "6.0.0.0",
@@ -329,6 +330,13 @@
           "API.dll": {}
         }
       },
+      "bootstrap/4.6.0": {
+        "dependencies": {
+          "jQuery": "3.0.0",
+          "popper.js": "1.16.1"
+        }
+      },
+      "jQuery/3.0.0": {},
       "Microsoft.AspNetCore.SpaServices.Extensions/6.0.0-preview.2.21154.6": {
         "dependencies": {
           "Microsoft.Extensions.FileProviders.Physical": "6.0.0-preview.2.21154.6"
@@ -373,6 +381,7 @@
           "lib/netstandard2.0/Microsoft.OpenApi.dll": {}
         }
       },
+      "popper.js/1.16.1": {},
       "Swashbuckle.AspNetCore/6.1.1": {
         "dependencies": {
           "Microsoft.Extensions.ApiDescription.Server": "3.0.0",
@@ -2156,6 +2165,20 @@
       "serviceable": false,
       "sha512": ""
     },
+    "bootstrap/4.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-nGsIRcbAcBybxBeoL5H6Uax8bb+nrT+tbx3/3n1yXCWq/s+fgEvdo0BAYIq1GmbBizA2KKShyFNiJaSanonIIQ==",
+      "path": "bootstrap/4.6.0",
+      "hashPath": "bootstrap.4.6.0.nupkg.sha512"
+    },
+    "jQuery/3.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xFfntV19HzCtKdJWOp/XT9PUY3SslokTDDLFJZdBug36j1XVhw1+vPQ/n7Gd5y+jdpesn5B1m1yn1qIUq57jlA==",
+      "path": "jquery/3.0.0",
+      "hashPath": "jquery.3.0.0.nupkg.sha512"
+    },
     "Microsoft.AspNetCore.SpaServices.Extensions/6.0.0-preview.2.21154.6": {
       "type": "package",
       "serviceable": true,
@@ -2204,6 +2227,13 @@
       "sha512": "sha512-Nug3rO+7Kl5/SBAadzSMAVgqDlfGjJZ0GenQrLywJ84XGKO0uRqkunz5Wyl0SDwcR71bAATXvSdbdzPrYRYKGw==",
       "path": "microsoft.openapi/1.2.3",
       "hashPath": "microsoft.openapi.1.2.3.nupkg.sha512"
+    },
+    "popper.js/1.16.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6GiVZho0vwBnId7pK7NLTjMGq4F0/VE65I08CCeKlarVoUt1w8SGTtJmhNo/0pK38EGUP/xbT4+OkWB8UTMPBw==",
+      "path": "popper.js/1.16.1",
+      "hashPath": "popper.js.1.16.1.nupkg.sha512"
     },
     "Swashbuckle.AspNetCore/6.1.1": {
       "type": "package",
