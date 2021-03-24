@@ -8,12 +8,23 @@ function App() {
     return (
         <Router>
             <div>
-                <nav>
-                    <ul>
-                        <li><Link to="/">Home</Link></li>
-                        <li><Link to="/search">Search</Link></li>
-                        <li><Link to="/random">Random</Link></li>
-                    </ul>
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="container-fluid">
+                        <Link class="nav-link" to="/">Home</Link>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <Link class="nav-link" to="/search">Search</Link>
+                                </li>
+                                <li class="nav-item">
+                                    <Link class="nav-link" to="/random">Random</Link>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </nav>
                 <Switch>
                     <Route path="/search">
