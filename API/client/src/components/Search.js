@@ -1,10 +1,10 @@
 import React from 'react';
-import './Search.css'
+import './Style.css'
 
 function Search() {
     return (
         <div>
-            <h1>Search for your favourite Tweeters</h1>
+            <h1 id="search-header">Search for your favourite Tweeters</h1>
             <div className="container">
                 <div className="row justify-content-center">
                     <div className="input-group col-6">
