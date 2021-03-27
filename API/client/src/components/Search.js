@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { React, useState } from 'react';
 import './Style.css'
 
@@ -8,7 +9,17 @@ function Search() {
 
     const searchQueryInput = event => {
         event.preventDefault();
-        console.log(search);
+        getTwitterData();
+    }
+
+    const getTwitterData = async () => {
+        axios.get('/api/Tweets')
+            .then(res => {
+                console.log(res.data);
+            })
+            .catch(err => {
+                console.log(err);
+            })
     }
 
     return (
