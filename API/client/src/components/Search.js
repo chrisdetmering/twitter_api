@@ -1,9 +1,11 @@
 import axios from 'axios';
 import { React, useState } from 'react';
+import DisplayCard from './DisplayCard';
 import './Style.css'
 
 function Search() {
     const [search, setSearch] = useState('');
+    const [twitterData, setTwitterData] = useState([]);
 
     const handleChange = event => setSearch(event.target.value);
 
@@ -15,11 +17,14 @@ function Search() {
     const getTwitterData = async () => {
         axios.get('/api/Tweets')
             .then(res => {
-                console.log(res.data);
+                const tweets = res.data;
+                setTwitterData(tweets);
+                console.log(tweets);
             })
             .catch(err => {
                 console.log(err);
             })
+
     }
 
     return (
@@ -45,17 +50,9 @@ function Search() {
                 </div>
             </form>
             <div className="container">
-                <div className="row justify-content-center">
-                    <div className="card">
-                        <div className="card-body">
-                            <h5 className="card-title">Card title</h5>
-                            <h6 className="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="/" className="card-link">Card link</a>
-                            <a href="/" className="card-link">Another link</a>
-                        </div>
-                    </div>
-                </div>
+                <DisplayCard
+                    twitterData={twitterData}
+                />
             </div>
         </div>
     );
