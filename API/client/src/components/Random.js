@@ -7,7 +7,7 @@ function Random() {
         { username: "@Wendys", imageSrc: "" },
         { username: "@TheOnion", imageSrc: "" },
         { username: "@mental_floss", imageSrc: "" },
-    ])
+    ]);
 
     const tweetUser = twitterUsers.map(item => {
         return <div className="col-2" key={Math.random()}>
@@ -18,7 +18,7 @@ function Random() {
                 </div>
             </div>
         </div>
-    })
+    });
 
     return (
         <div>
