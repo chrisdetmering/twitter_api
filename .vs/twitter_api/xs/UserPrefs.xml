@@ -1,21 +1,15 @@
 ﻿<Properties StartupConfiguration="{2E9EEF21-830D-4E8B-B186-89ABBD432C40}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
-  <MonoDevelop.Ide.Workbench ActiveDocument="API/Controllers/RandomController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument=".gitignore">
     <Files>
       <File FileName="API/Program.cs" Line="23" Column="46" />
-      <File FileName="API/Startup.cs" />
-      <File FileName="API/Controllers/TweetsController.cs" Line="29" Column="41" />
-      <File FileName="API/Controllers/RandomController.cs" Line="22" Column="104" />
+      <File FileName="API/Startup.cs" Line="1" Column="1" />
+      <File FileName="API/Controllers/TweetsController.cs" />
+      <File FileName=".gitignore" Line="38" Column="17" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="twitter_api" expanded="True">
-            <Node name="API" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="RandomController.cs" selected="True" />
-              </Node>
-            </Node>
-          </Node>
+          <Node name="twitter_api" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>
