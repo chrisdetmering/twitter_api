@@ -12,21 +12,18 @@ namespace API.Controllers
     [Route("api/[controller]")]
     public class TweetsController : Controller
     {
-        public TwitterResponse TwitterResponse = new TwitterResponse
+        public TweetsController(ITweetProcessor tweetProcessor)
         {
-            Data = new List<TwitterData>
-        {
-            new TwitterData { AuthorId = "12345", Id = "67890", Text = "hello world 1"},
-            new TwitterData { AuthorId = "24680", Id = "08642", Text = "hello world 2"},
-            new TwitterData { AuthorId = "13579", Id = "97531", Text = "hello world 3"}
+            _tweetProcessor = tweetProcessor;
         }
-        };
 
-    // GET: api/values
-    [HttpGet]
-        public IEnumerable<TwitterData> Get()
+        private readonly ITweetProcessor _tweetProcessor;
+
+        // GET: api/values
+        [HttpGet]
+        public void Get(string search)
         {
-            return TwitterResponse.Data;
+            _tweetProcessor.LoadTweet("elonmusk");
         }
 
         // GET api/values/5
@@ -53,21 +50,5 @@ namespace API.Controllers
         public void Delete(int id)
         {
         }
-
     }
-
-
-    public class TwitterResponse
-    {
-        public List<TwitterData> Data { get; set; }
-    }
-
-    public class TwitterData
-    {
-        public string AuthorId { get; set; }
-        public string Id { get; set; }
-        public string Text { get; set; }
-    }
-
-
 }

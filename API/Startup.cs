@@ -34,6 +34,10 @@ namespace API
           {
               config.RootPath = "client/build";
           });
+
+            services.AddScoped<IApiHelper, ApiHelper>();
+            services.AddScoped<ITweetProcessor, TweetProcessor>();
+
         }
 
             // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
