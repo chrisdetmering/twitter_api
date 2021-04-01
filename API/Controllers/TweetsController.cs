@@ -23,7 +23,7 @@ namespace API.Controllers
 
         // GET: api/values
         [HttpGet]
-        public Task<TweetModel> Get(string search)
+        public Task<TweetsModel> Get(string search)
         {
            return _tweetProcessor.GetTweetsSearch("elonmusk");
         }

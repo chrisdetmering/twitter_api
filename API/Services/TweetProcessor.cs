@@ -29,6 +29,7 @@ namespace API.Services
             {
                 if (response.IsSuccessStatusCode)
                 {
+                    
                     TweetsModel tweet = await response.Content.ReadAsAsync<TweetsModel>();
 
                     //TweetsModel tweetObject = JsonSerializer.Deserialize<TweetsModel>(tweet);

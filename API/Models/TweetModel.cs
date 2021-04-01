@@ -7,36 +7,36 @@ namespace API.Models
 {
     public class TweetsModel
     {
-        [JsonPropertyName("statuses")]
-        public List<TweetModel> data { get; set; }
+        //[JsonPropertyName("statuses")]
+        public List<TweetUserModel> statuses { get; set; }
     }
 
-    public class TweetModel
+    public class TweetUserModel
     {
-        [JsonPropertyName("id")]
+        //[JsonPropertyName("id")]
         public long Id { get; set; }
 
-        [JsonPropertyName("user.profile_image_url_https")]
+        //[JsonPropertyName("profile_image_url_https")]
         public string UserImageUrl { get; set; }
 
-        [JsonPropertyName("user.name")]
-        public string UserName { get; set; }
+        //[JsonPropertyName("name")]
+        public string name { get; set; }
 
-        [JsonPropertyName("user.screen_name")]
-        public string ScreenName { get; set; }
+        //[JsonPropertyName("screen_name")]
+        public string screen_name { get; set; }
 
-        [JsonPropertyName("created_at")]
-        public string CreatedAt { get; set; }
+        //[JsonPropertyName("created_at")]
+        public string created_at { get; set; }
 
-        [JsonPropertyName("text")]
-        public string TweetBody { get; set; }
+        //[JsonPropertyName("text")]
+        public string text { get; set; }
 
-        [JsonPropertyName("retweet-count")]
-        public int Retweets { get; set; }
+        //[JsonPropertyName("retweet_count")]
+        public int retweet_count { get; set; }
 
-        [JsonPropertyName("favorite-count")]
-        public int Likes { get; set; }
+        //[JsonPropertyName("favorite_count")]
+        public int favorite_count { get; set; }
 
-        public override string ToString() => JsonSerializer.Serialize<TweetModel>(this);
+        public override string ToString() => JsonSerializer.Serialize<TweetUserModel>(this);
     }
 }
