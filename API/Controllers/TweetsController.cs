@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using API.Models;
 using API.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -22,9 +23,9 @@ namespace API.Controllers
 
         // GET: api/values
         [HttpGet]
-        public void Get(string search)
+        public Task<TweetModel> Get(string search)
         {
-            _tweetProcessor.LoadTweet("elonmusk");
+           return _tweetProcessor.GetTweetsSearch("elonmusk");
         }
 
         // GET api/values/5

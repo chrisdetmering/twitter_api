@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Net.Http;
+using System.Text.Json;
 using System.Threading.Tasks;
+using API.Models;
+using System.Text.Json.Serialization;
 
 namespace API.Services
 {
     public interface ITweetProcessor
     {
-        Task LoadTweet(string search);
-
+        Task<TweetsModel> GetTweetsSearch(string search);
     }
 
     public class TweetProcessor : ITweetProcessor
@@ -19,7 +21,7 @@ namespace API.Services
             _client = apiHelper.InitializeClient();
         }
 
-       public async Task LoadTweet(string search)
+       public async Task<TweetsModel> GetTweetsSearch(string search)
         {
             string url = $"https://api.twitter.com/1.1/search/tweets.json?q={search}&result_type=popular";
 
@@ -27,7 +29,14 @@ namespace API.Services
             {
                 if (response.IsSuccessStatusCode)
                 {
-                    Console.WriteLine(response.Content.ReadAsStringAsync());
+                    TweetsModel tweet = await response.Content.ReadAsAsync<TweetsModel>();
+
+                    //TweetsModel tweetObject = JsonSerializer.Deserialize<TweetsModel>(tweet);
+                    return tweet;
+                }
+                else
+                {
+                    throw new Exception(response.ReasonPhrase);
                 }
             }
         }
