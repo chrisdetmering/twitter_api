@@ -25,7 +25,7 @@ namespace API.Controllers
         [HttpGet]
         public Task<TweetsModel> Get(string search)
         {
-           return _tweetProcessor.GetTweetsSearch("elonmusk");
+           return _tweetProcessor.GetTweetsSearch("nasa");
         }
 
         // GET api/values/5

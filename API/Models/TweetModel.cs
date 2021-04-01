@@ -16,15 +16,6 @@ namespace API.Models
         //[JsonPropertyName("id")]
         public long Id { get; set; }
 
-        //[JsonPropertyName("profile_image_url_https")]
-        public string UserImageUrl { get; set; }
-
-        //[JsonPropertyName("name")]
-        public string name { get; set; }
-
-        //[JsonPropertyName("screen_name")]
-        public string screen_name { get; set; }
-
         //[JsonPropertyName("created_at")]
         public string created_at { get; set; }
 
@@ -37,6 +28,20 @@ namespace API.Models
         //[JsonPropertyName("favorite_count")]
         public int favorite_count { get; set; }
 
+        public TweetUser user { get; set; }
+
         public override string ToString() => JsonSerializer.Serialize<TweetUserModel>(this);
+    }
+
+    public class TweetUser
+    {
+        //[JsonPropertyName("profile_image_url_https")]
+        public string profile_image_url_https { get; set; }
+
+        //[JsonPropertyName("name")]
+        public string name { get; set; }
+
+        //[JsonPropertyName("screen_name")]
+        public string screen_name { get; set; }
     }
 }

@@ -32,7 +32,6 @@ namespace API.Services
                     
                     TweetsModel tweet = await response.Content.ReadAsAsync<TweetsModel>();
 
-                    //TweetsModel tweetObject = JsonSerializer.Deserialize<TweetsModel>(tweet);
                     return tweet;
                 }
                 else
