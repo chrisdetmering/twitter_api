@@ -3,7 +3,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using Microsoft.Extensions.Configuration;
 
-namespace API
+namespace API.Services
 {
     public interface IApiHelper
     {

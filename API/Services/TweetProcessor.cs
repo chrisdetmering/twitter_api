@@ -2,7 +2,7 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace API
+namespace API.Services
 {
     public interface ITweetProcessor
     {
