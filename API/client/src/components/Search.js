@@ -17,7 +17,7 @@ function Search() {
     const getTwitterData = async () => {
         axios.get(`/api/Tweets/${search}`)
             .then(res => {
-                const tweets = res.data;
+                const tweets = res.data.statuses;
                 setTwitterData(tweets);
                 console.log(tweets);
             })
@@ -29,7 +29,7 @@ function Search() {
 
     return (
         <div>
-            <h1 id="search-header">Search for your favourite Tweeters</h1>
+            <h1 id="search-header">Search for your favourite Tweets</h1>
             <form>
                 <div className="container">
                     <div className="row justify-content-center">
