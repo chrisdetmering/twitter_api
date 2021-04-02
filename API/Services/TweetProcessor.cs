@@ -23,7 +23,7 @@ namespace API.Services
 
        public async Task<TweetsModel> GetTweetsSearch(string search)
         {
-            string url = $"https://api.twitter.com/1.1/search/tweets.json?q={search}&result_type=popular";
+            string url = $"https://api.twitter.com/1.1/search/tweets.json?q={search}&result_type=popular&lang=en";
 
             using (HttpResponseMessage response = await _client.GetAsync(url))
             {
