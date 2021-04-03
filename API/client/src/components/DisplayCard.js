@@ -2,6 +2,17 @@ import React from 'react';
 
 function DisplayCard({ twitterData }) {
 
+    function displayImg(item) {
+
+        if (item.entities.media) {
+            return (
+                <a href={item.entities.media[0].media_url_https}>
+                    <img src={item.entities.media[0].media_url_https} className="body-img card-img-top" alt="..."></img>
+                </a>
+            )
+        }
+    };
+
     return twitterData.map(item => {
         return (
             <div className="row justify-content-center" key={item.id}>
@@ -11,6 +22,7 @@ function DisplayCard({ twitterData }) {
                         <h5 className="card-title mt-3">{item.user.name}</h5>
                         <h6 className="card-subtitle mb-2 text-muted">@{item.user.screen_name}</h6>
                         <p className="card-text">{item.text}</p>
+                        {displayImg(item)}
                         <p className="counts">Retweets: {item.retweet_count} Likes: {item.favorite_count}</p>
                     </div>
                 </div>

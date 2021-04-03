@@ -5,8 +5,8 @@
 
 #search-card {
     margin-top: 10px;
-    width: 30rem;
-    height: 20rem;
+    width: 37rem;
+    object-fit: contain;
 }
 
 .profile-img {
@@ -15,8 +15,16 @@
     border-radius: 50%;
 }
 
+.body-img {
+    height: 300px;
+    border-radius: 15px !important;
+    object-fit: cover;
+    object-position: center;
+    
+}
+
 .counts {
-    margin-top: 68px;
+    margin: 10px 0 0 0;
 }
 
 #random-header {
