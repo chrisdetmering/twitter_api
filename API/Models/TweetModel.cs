@@ -30,7 +30,7 @@ namespace API.Models
 
         public TweetUser user { get; set; }
 
-        public TweetEntities entities { get; set; }
+        // public TweetEntities entities { get; set; }
 
         public override string ToString() => JsonSerializer.Serialize<TweetUserModel>(this);
     }
