@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace API.Controllers
 {
 
-    [Route("api/[controller]/{search}")]
+    [Route("api/[controller]")]
     public class TweetsController : Controller
     {
         public TweetsController(ITweetProcessor tweetProcessor)
@@ -22,11 +22,11 @@ namespace API.Controllers
         private readonly ITweetProcessor _tweetProcessor;
 
         // GET: api/values
-        //[Route("api/[controller]/{search}")]
+        [Route("search/{searchValue}")]
         [HttpGet]
-        public Task<TweetsModel> Get(string search)
+        public Task<TweetsModel> Get(string searchValue)
         {
-            return _tweetProcessor.GetTweetsSearch(search);
+            return _tweetProcessor.GetTweetsSearch(searchValue);
         }
 
         // GET api/values/5

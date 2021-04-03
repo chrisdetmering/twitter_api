@@ -2,7 +2,7 @@ import React from 'react';
 
 function DisplayCard({ twitterData }) {
 
-    return twitterData.statuses.map(item => {
+    return twitterData.map(item => {
         return (
             <div className="row justify-content-center" key={item.id}>
                 <div className="card" id="search-card">

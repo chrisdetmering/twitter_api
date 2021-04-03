@@ -15,7 +15,7 @@ function Search() {
     }
 
     const getTwitterData = async () => {
-        axios.get(`/api/Tweets/${search}`)
+        axios.get(`/api/Tweets/search/${search}`)
             .then(res => {
                 const tweets = res.data.statuses;
                 setTwitterData(tweets);
