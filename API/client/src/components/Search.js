@@ -29,7 +29,7 @@ function Search() {
 
     return (
         <div>
-            <h1 id="search-header">Search for your favourite Tweets</h1>
+            <h1 id="search-header">Search for your favourite Twitter user</h1>
             <form>
                 <div className="container">
                     <div className="row justify-content-center">

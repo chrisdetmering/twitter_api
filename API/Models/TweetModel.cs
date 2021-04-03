@@ -30,6 +30,8 @@ namespace API.Models
 
         public TweetUser user { get; set; }
 
+        public TweetEntities entities { get; set; }
+
         public override string ToString() => JsonSerializer.Serialize<TweetUserModel>(this);
     }
 
@@ -44,4 +46,19 @@ namespace API.Models
         //[JsonPropertyName("screen_name")]
         public string screen_name { get; set; }
     }
+
+    public class TweetEntities
+    {
+        public List<TweetMedia> media { get; set; }
+    }
+
+    public class TweetMedia
+    {
+        public string media_url_https { get; set; }
+    }
+
+    // public class TweetMediaModel
+    // {
+    //     public string media_url_https { get; set; }
+    // }
 }
