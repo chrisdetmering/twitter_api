@@ -22,6 +22,8 @@ namespace API.Models
 
         public int favorite_count { get; set; }
 
+        public int[] display_text_range { get; set; }
+
         public TweetUser user { get; set; }
 
         public TweetEntities entities { get; set; }
@@ -42,7 +44,18 @@ namespace API.Models
 
     public class TweetEntities
     {
+        public List<TweetUrls> urls { get; set; }
+
         public List<TweetMedia> media { get; set; }
+    }
+
+    public class TweetUrls
+    {
+        public string url { get; set; }
+
+        public string display_url { get; set; }
+
+        public int[] indices { get; set; }
     }
 
     public class TweetMedia
