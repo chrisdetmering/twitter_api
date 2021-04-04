@@ -34,22 +34,19 @@ function DisplayCard({ twitterData }) {
     }
 
     function formatFullText(item, textRange, urls) {
-        let formattedFullText = item.slice(textRange[0], textRange[1]);
-        let formattedFullTextLink = "";
         if (urls.length < 1) {
             return (
                 <div>
                     <p className="card-text">
-                        {formattedFullText}
+                        {item.slice(textRange[0], textRange[1])}
                     </p>
                 </div>
             )
         } else {
-            formattedFullTextLink = formattedFullText.slice(textRange[0], urls[0].indices[0])
             return (
                 <div>
                     <p className="card-text">
-                        {formattedFullTextLink}
+                        {item.slice(textRange[0], urls[0].indices[0])}
                         <a href={urls[0].url} target="_blank" rel="noopener noreferrer">{urls[0].display_url}</a>
                     </p>
                 </div>
@@ -59,10 +56,7 @@ function DisplayCard({ twitterData }) {
 
     function formatDate(item) {
         let formattedDate = item.slice(4, 10);
-        if (formattedDate.indexOf("0") === 4)
-            return formattedDate.split("0").join("");
-        else
-            return formattedDate;
+        return formattedDate.indexOf("0") === 4 ? formattedDate.split("0").join("") : formattedDate;
     }
 
     return twitterData.map(item => {
