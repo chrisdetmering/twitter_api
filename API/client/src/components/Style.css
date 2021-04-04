@@ -7,7 +7,6 @@
     margin-top: 10px;
     width: 37rem;
     object-fit: contain;
-    box-shadow: 1px 1px 1px grey;
 }
 
 .card-name {
@@ -20,8 +19,13 @@
     margin-left: 10px;
 }
 
+.card-text {
+    font-weight: 500;
+}
+
 .card-body {
     padding-top: 0px !important;
+    padding-bottom: 15px !important;
 }
 
 .profile-img {
@@ -33,13 +37,14 @@
     border-radius: 15px !important;
     object-fit: cover;
     object-position: center;
-    
+    margin-top: 10px;
 }
 
 .body-video {
     justify-content: center;
     height: 100% !important ;
     width: 100% !important;
+    margin-top: 10px;
 }
 
 .counts {
@@ -54,5 +59,30 @@
 
 #random-card {
     margin-top: 10px;
-    /* width: 15rem; */
+}
+
+.retweet-count {
+    padding: 5px;
+    font-weight: 500;
+    transition: 250ms ease-in-out;
+}
+
+.retweet-count:hover {
+    cursor: pointer;
+    background-color: rgba(0, 128, 0, 0.05);
+    color: green;
+    border-radius: 10px;
+}
+
+.favorite-count {
+    padding: 5px;
+    font-weight: 500;
+    transition: 250ms ease-in-out;
+}
+
+.favorite-count:hover {
+    cursor: pointer;
+    background-color: rgba(255, 0, 0, 0.05);
+    color: red;
+    border-radius: 10px;
 }

@@ -11,6 +11,7 @@ function Search() {
 
     const searchQueryInput = event => {
         event.preventDefault();
+        if (search === "") return;
         getTwitterData();
     }
 
