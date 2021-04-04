@@ -24,7 +24,7 @@ namespace API.Services
        public async Task<TweetsModel> GetTweetsSearch(string search)
         {
             //string url = $"https://api.twitter.com/1.1/search/tweets.json?q={search}&result_type=popular&lang=en";
-            string url = $"https://api.twitter.com/1.1/search/tweets.json?q=from:{search}&lang=en&count=10";
+            string url = $"https://api.twitter.com/1.1/search/tweets.json?q=from:{search}&lang=en&count=10&include_entities=true&tweet_mode=extended&expansions=attachments.media_keys";
 
             using (HttpResponseMessage response = await _client.GetAsync(url))
             {

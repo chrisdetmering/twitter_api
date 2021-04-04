@@ -36,6 +36,7 @@ function Search() {
                         <div className="input-group col-6">
                             <input type="text"
                                 className="form-control"
+                                value={search}
                                 onChange={handleChange}
                                 placeholder="Twitter username"
                                 aria-label="username"
