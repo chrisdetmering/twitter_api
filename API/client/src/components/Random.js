@@ -3,16 +3,19 @@ import React, { useState, useEffect } from 'react';
 import TweetModal from './TweetModal';
 
 function Random() {
-    const [twitterUsers] = useState(["dalailama", "nasa", "funnyordie", "TheOnion", "mental_floss"]);
+    const [twitterUsers] = useState(["nhl", "nasa", "ConanObrien", "TheOnion", "mental_floss"]);
     const [twitterUserData, setTwitterUserData] = useState([]);
     const [randomTweet, setRandomTweet] = useState([]);
+    
+    useEffect(() => {
+        getTwitterUserData(twitterUsers);
+    }, []);
 
     const getTwitterUserData = async () => {
         twitterUsers.forEach(item => {
             axios.get(`api/Tweets/user/${item}`)
                 .then(res => {
                     addNewUserData(res.data);
-                    console.log(res.data);
                 })
                 .catch(err => {
                     console.log(err);
@@ -29,17 +32,13 @@ function Random() {
     const getRandomTweet = async (user) => {
         axios.get(`/api/Tweets/random/${user}`)
             .then(res => {
-                setRandomTweet(res.data.statuses);
-                console.log(res.data.statuses);
+                const index = Math.floor(Math.random() * res.data.statuses.length);
+                setRandomTweet([res.data.statuses[index]])
             })
             .catch(err => {
                 console.log(err);
             })
     }
-
-    useEffect(() => {
-        getTwitterUserData(twitterUsers);
-    }, []);
 
     const tweetUser = twitterUserData.map(item => {
         return (

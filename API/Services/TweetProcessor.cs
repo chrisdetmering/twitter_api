@@ -4,6 +4,8 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using API.Models;
 using System.Text.Json.Serialization;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace API.Services
 {
@@ -65,7 +67,7 @@ namespace API.Services
 
         public async Task<TweetsModel> GetRandomTweet(string search)
         {
-            string url = $"https://api.twitter.com/1.1/search/tweets.json?q=from:{search}&lang=en&count=1&include_entities=true&tweet_mode=extended&expansions=attachments.media_keys";
+            string url = $"https://api.twitter.com/1.1/search/tweets.json?q=from:{search}&lang=en&count=50&include_entities=true&tweet_mode=extended&expansions=attachments.media_keys";
 
             using (HttpResponseMessage response = await _client.GetAsync(url))
             {
@@ -75,12 +77,23 @@ namespace API.Services
                     TweetsModel tweet = await response.Content.ReadAsAsync<TweetsModel>();
 
                     return tweet;
+
                 }
+
                 else
                 {
                     throw new Exception(response.ReasonPhrase);
                 }
             }
         }
+
+        //private TweetsModel pickRandomTweet(TweetsModel tweet)
+        //{
+        //    var random = new Random();
+
+        //    int index = random.Next(tweet.Count);
+
+        //    return tweet[index];
+        //}
     }
 }
