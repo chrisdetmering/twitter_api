@@ -30,11 +30,11 @@ namespace API.Controllers
         }
 
         // GET api/values/5
-        [Route("random/{user}")]
+        [Route("user/{user}")]
         [HttpGet]
-        public Task<TweetsModel> GetRandom(string user)
+        public Task<UserModel> GetUser(string user)
         {
-            return _tweetProcessor.GetTweetsSearch(user);
+            return _tweetProcessor.GetUserData(user);
         }
     }
 }

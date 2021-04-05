@@ -1,32 +1,61 @@
-import React, { useState } from 'react';
+import axios from 'axios';
+import React, { useState, useEffect } from 'react';
+import TweetModal from './TweetModal';
 
 function Random() {
-    const [twitterUsers, setTwitterUsers] = useState([
-        { username: "@DalaiLama", imageSrc: "" },
-        { username: "@InspiringThinkn", imageSrc: "" },
-        { username: "@Wendys", imageSrc: "" },
-        { username: "@TheOnion", imageSrc: "" },
-        { username: "@mental_floss", imageSrc: "" },
-    ]);
+    const [twitterUsers] = useState(["dalailama", "elonmusk", "wendys", "TheOnion", "mental_floss"]);
+    const [twitterUserData, setTwitterUserData] = useState([]);
+    const [randomTweet, setRandomTweet] = useState([]);
 
-    const tweetUser = twitterUsers.map(item => {
-        return <div className="col-2" key={Math.random()}>
-            <div className="card" id="random-card">
-                <img src="..." className="card-img-top" alt="..."></img>
-                <div className="card-body">
-                    <p className="card-text">{item.username}</p>
+    const getTwitterUserData = async () => {
+        twitterUsers.forEach(item => {
+            axios.get(`api/Tweets/user/${item}`)
+                .then(res => {
+                    addNewUserData(res.data);
+                    console.log(res.data);
+                })
+                .catch(err => {
+                    console.log(err);
+                })
+        })
+    }
+
+    const addNewUserData = (data) => {
+        setTwitterUserData(prevState =>
+            [...prevState, data]
+        );
+    }
+
+    const getRandomTweet = async (user) => {
+        console.log(user);
+    }
+
+    useEffect(() => {
+        getTwitterUserData(twitterUsers);
+    }, []);
+
+    const tweetUser = twitterUserData.map(item => {
+        return (
+            <div key={item.id}>
+                <div className="card random-card">
+                    <img src={item.profile_image_url_https} className="card-user-img" alt="profile"></img>
+                    <div className="card-body random-body">
+                        <p className="card-text">@{item.screen_name}</p>
+                        <button className="btn btn-primary justify-content-center" data-toggle="modal" data-target="#tweet-modal" onClick={() => getRandomTweet(item.screen_name)}>Random Tweet</button>
+                    </div>
                 </div>
             </div>
-        </div>
+        )
     });
 
     return (
         <div>
             <h1 id="random-header">Get random tweets</h1>
-            <div className="container-fluid" id="twitter-users">
-                <div className="row justify-content-center">
-                    {tweetUser}
-                </div>
+            <div className="container twitter-users">
+                {tweetUser}
+            </div>
+            <div className="modal" id="tweet-modal" tabIndex="-1">
+                <TweetModal />
             </div>
         </div>
     );
