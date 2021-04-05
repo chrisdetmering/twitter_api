@@ -10,7 +10,7 @@ function DisplayCard({ twitterData }) {
                     <ReactPlayer
                         controls={true}
                         className="body-video"
-                        url={item.extended_entities.media[0].video_info.variants[2].url}
+                        url={item.extended_entities.media[0].video_info.variants[0].url}
                     />
                 </div>
             )
