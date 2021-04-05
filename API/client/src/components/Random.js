@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import TweetModal from './TweetModal';
 
 function Random() {
-    const [twitterUsers] = useState(["dalailama", "elonmusk", "wendys", "TheOnion", "mental_floss"]);
+    const [twitterUsers] = useState(["dalailama", "nasa", "funnyordie", "TheOnion", "mental_floss"]);
     const [twitterUserData, setTwitterUserData] = useState([]);
     const [randomTweet, setRandomTweet] = useState([]);
 
@@ -27,7 +27,14 @@ function Random() {
     }
 
     const getRandomTweet = async (user) => {
-        console.log(user);
+        axios.get(`/api/Tweets/random/${user}`)
+            .then(res => {
+                setRandomTweet(res.data.statuses);
+                console.log(res.data.statuses);
+            })
+            .catch(err => {
+                console.log(err);
+            })
     }
 
     useEffect(() => {
@@ -50,12 +57,14 @@ function Random() {
 
     return (
         <div>
-            <h1 id="random-header">Get random tweets</h1>
+            <h1 id="random-header">Get random Tweets</h1>
             <div className="container twitter-users">
                 {tweetUser}
             </div>
             <div className="modal" id="tweet-modal" tabIndex="-1">
-                <TweetModal />
+                <TweetModal
+                    twitterData={randomTweet}
+                />
             </div>
         </div>
     );

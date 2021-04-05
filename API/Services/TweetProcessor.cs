@@ -11,6 +11,7 @@ namespace API.Services
     {
         Task<TweetsModel> GetTweetsSearch(string search);
         Task<UserModel> GetUserData(string search);
+        Task<TweetsModel> GetRandomTweet(string user);
     }
 
     public class TweetProcessor : ITweetProcessor
@@ -52,6 +53,26 @@ namespace API.Services
                 {
                     
                     UserModel tweet = await response.Content.ReadAsAsync<UserModel>();
+
+                    return tweet;
+                }
+                else
+                {
+                    throw new Exception(response.ReasonPhrase);
+                }
+            }
+        }
+
+        public async Task<TweetsModel> GetRandomTweet(string search)
+        {
+            string url = $"https://api.twitter.com/1.1/search/tweets.json?q=from:{search}&lang=en&count=1&include_entities=true&tweet_mode=extended&expansions=attachments.media_keys";
+
+            using (HttpResponseMessage response = await _client.GetAsync(url))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+
+                    TweetsModel tweet = await response.Content.ReadAsAsync<TweetsModel>();
 
                     return tweet;
                 }

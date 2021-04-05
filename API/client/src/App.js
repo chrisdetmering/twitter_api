@@ -10,7 +10,7 @@ function App() {
             <div>
                 <div className="container-fluid">
                     <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                        <span className="navbar-brand" href="/">Twitter App</span>
+                        <span className="navbar-brand" href="/">Happy-Tweet</span>
                         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
                         </button>

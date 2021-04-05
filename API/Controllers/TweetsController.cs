@@ -36,5 +36,12 @@ namespace API.Controllers
         {
             return _tweetProcessor.GetUserData(user);
         }
+
+        [Route("random/{user}")]
+        [HttpGet]
+        public Task<TweetsModel> GetRandom(string user)
+        {
+            return _tweetProcessor.GetRandomTweet(user);
+        }
     }
 }

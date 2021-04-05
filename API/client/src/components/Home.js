@@ -2,7 +2,7 @@ import React from 'react';
 
 function Home() {
     return (
-        <div>
+        <div className="container mt-4">
             <div className="jumbotron">
                 <h1 className="display-4" id="home-header">Welcome to Happy-Tweet!</h1>
                 <p className="lead">A twitter API showcase app.</p>
