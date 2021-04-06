@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 
 namespace API.Models
 {
-    public class TweetsModel
+    public class TweetModel
     {
         public List<TweetUserModel> statuses { get; set; }
     }

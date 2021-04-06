@@ -58,7 +58,7 @@ function DisplayCard({ twitterData }) {
         let formattedDate = item.slice(4, 10);
         return formattedDate.indexOf("0") === 4 ? formattedDate.split("0").join("") : formattedDate;
     }
-
+    
     return twitterData.map(item => {
         return (
             <div className="container" key={item.id}>

@@ -11,9 +11,9 @@ namespace API.Services
 {
     public interface ITweetProcessor
     {
-        Task<TweetsModel> GetTweetsSearch(string search);
+        Task<TweetModel> GetTweetsByUser(string search);
         Task<UserModel> GetUserData(string search);
-        Task<TweetsModel> GetRandomTweet(string user);
+        Task<TweetModel> GetRandomTweet(string user);
     }
 
     public class TweetProcessor : ITweetProcessor
@@ -25,7 +25,7 @@ namespace API.Services
             _client = apiHelper.InitializeClient();
         }
 
-       public async Task<TweetsModel> GetTweetsSearch(string search)
+       public async Task<TweetModel> GetTweetsByUser(string search)
         {
             string url = $"https://api.twitter.com/1.1/search/tweets.json?q=from:{search}&lang=en&count=15&include_entities=true&tweet_mode=extended&expansions=attachments.media_keys";
 
@@ -33,8 +33,7 @@ namespace API.Services
             {
                 if (response.IsSuccessStatusCode)
                 {
-                    
-                    TweetsModel tweet = await response.Content.ReadAsAsync<TweetsModel>();
+                    TweetModel tweet = await response.Content.ReadAsAsync<TweetModel>();
 
                     return tweet;
                 }
@@ -53,7 +52,6 @@ namespace API.Services
             {
                 if (response.IsSuccessStatusCode)
                 {
-                    
                     UserModel tweet = await response.Content.ReadAsAsync<UserModel>();
 
                     return tweet;
@@ -65,7 +63,7 @@ namespace API.Services
             }
         }
 
-        public async Task<TweetsModel> GetRandomTweet(string search)
+        public async Task<TweetModel> GetRandomTweet(string search)
         {
             string url = $"https://api.twitter.com/1.1/search/tweets.json?q=from:{search}&lang=en&count=50&include_entities=true&tweet_mode=extended&expansions=attachments.media_keys";
 
@@ -73,11 +71,9 @@ namespace API.Services
             {
                 if (response.IsSuccessStatusCode)
                 {
-
-                    TweetsModel tweet = await response.Content.ReadAsAsync<TweetsModel>();
+                    TweetModel tweet = await response.Content.ReadAsAsync<TweetModel>();
 
                     return tweet;
-
                 }
 
                 else
@@ -86,14 +82,5 @@ namespace API.Services
                 }
             }
         }
-
-        //private TweetsModel pickRandomTweet(TweetsModel tweet)
-        //{
-        //    var random = new Random();
-
-        //    int index = random.Next(tweet.Count);
-
-        //    return tweet[index];
-        //}
     }
 }
