@@ -6,7 +6,8 @@ function DisplayCard({ twitterData }) {
     const displayMedia = item => {
         switch (tweetMediaType(item)) {
             case "video":
-                return displayTweetVideo(item.extended_entities.media[0], 1);
+                const videoQuality = findVideoQuality(item.extended_entities.media[0].video_info.variants)
+                return displayTweetVideo(item.extended_entities.media[0], videoQuality);
 
             case "animated_gif":
                 return displayTweetVideo(item.extended_entities.media[0], 0);
@@ -21,6 +22,15 @@ function DisplayCard({ twitterData }) {
 
     const tweetMediaType = item => {
         if (item.extended_entities) return item.extended_entities.media[0].type;
+    }
+
+    const findVideoQuality = media => {
+        const videoQuality = "1280x720";
+        for (let i = 0; i < media.length; i++) {
+            if (media[i].url.includes(videoQuality))
+                return i;
+        }
+        return 0;
     }
 
     const displayTweetVideo = (media, index) => {
@@ -78,7 +88,7 @@ function DisplayCard({ twitterData }) {
         let formattedDate = item.slice(4, 10);
         return formattedDate.indexOf("0") === 4 ? formattedDate.split("0").join("") : formattedDate;
     }
-    
+
     return twitterData.map(item => {
         return (
             <div className="container" key={item.id}>
