@@ -14,7 +14,7 @@ namespace API.Models
 
     public class TweetUserModel
     {
-        public long Id { get; set; }
+        public long id { get; set; }
 
         public string created_at { get; set; }
 

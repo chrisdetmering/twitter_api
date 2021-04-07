@@ -19,6 +19,7 @@ function Search() {
         axios.get(`/api/Tweets/search/${search}`)
             .then(res => {
                 setTwitterData(res.data.statuses);
+                console.log(res.data.statuses)
             })
             .catch(err => {
                 console.log(err);

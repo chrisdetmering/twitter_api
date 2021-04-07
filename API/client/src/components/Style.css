@@ -68,7 +68,7 @@
 }
 
 .retweet-count:hover {
-    cursor: pointer;
+    cursor: not-allowed;
     background-color: rgba(0, 128, 0, 0.05);
     color: green;
     border-radius: 10px;
@@ -81,7 +81,7 @@
 }
 
 .favorite-count:hover {
-    cursor: pointer;
+    cursor: not-allowed;
     background-color: rgba(255, 0, 0, 0.05);
     color: red;
     border-radius: 10px;
