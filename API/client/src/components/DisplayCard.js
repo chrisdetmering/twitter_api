@@ -1,27 +1,47 @@
 import React from 'react';
-import ReactPlayer from "react-player"
+import ReactPlayer from 'react-player';
 
 function DisplayCard({ twitterData }) {
 
     function displayMedia(item) {
-        if (item.extended_entities !== null && item.extended_entities.media[0].video_info !== null) {
-            return (
-                <div>
-                    <ReactPlayer
-                        controls={true}
-                        className="body-video"
-                        url={item.extended_entities.media[0].video_info.variants[0].url}
-                    />
-                </div>
-            )
-        } else if (item.entities.media) {
-            return (
-                <a href={item.entities.media[0].media_url_https} target="_blank" rel="noopener noreferrer">
-                    <img src={item.entities.media[0].media_url_https} className="body-img card-img" alt="..."></img>
-                </a>
-            )
+        switch (tweetMediaType(item)) {
+            case "video":
+                return displayTweetVideo(item.extended_entities.media[0], 1);
+
+            case "animated_gif":
+                return displayTweetVideo(item.extended_entities.media[0], 0);
+
+            case "photo":
+                return displayTweetPhoto(item.entities.media[0])
+
+            default:
+                return;
         }
     };
+
+    function tweetMediaType(item) {
+        if (item.extended_entities) return item.extended_entities.media[0].type;
+    }
+
+    function displayTweetVideo(media, index) {
+        return (
+            <div>
+                <ReactPlayer
+                    controls={true}
+                    className="body-video"
+                    url={media.video_info.variants[index].url}
+                />
+            </div>
+        );
+    }
+
+    function displayTweetPhoto(media) {
+        return (
+            <a href={media.media_url_https} target="_blank" rel="noopener noreferrer">
+                <img src={media.media_url_https} className="body-img card-img" alt="..."></img>
+            </a>
+        );
+    }
 
     function formatCounts(item) {
         let formattedCounts = 0;
