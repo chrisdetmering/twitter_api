@@ -51,7 +51,8 @@ namespace API.Services
 
             var twitterResponse = GetTweets(url);
 
-            return JsonSerializer.Deserialize<TweetModel>(twitterResponse.Result);
+             return JsonSerializer.Deserialize<TweetModel>(twitterResponse.Result);
+
         }
 
         private async Task<string> GetTweets(string url)
