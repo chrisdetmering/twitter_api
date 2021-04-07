@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import TweetModal from './TweetModal';
+import TwitterUserCard from './TwitterUserCard';
 
 function Random() {
     const [twitterUsers] = useState(["nhl", "nasa", "ConanObrien", "TheOnion", "mental_floss"]);
@@ -34,32 +35,21 @@ function Random() {
         axios.get(`/api/Tweets/random/${user}`)
             .then(res => {
                 const index = Math.floor(Math.random() * res.data.statuses.length);
-                setRandomTweet([res.data.statuses[index]])
+                setRandomTweet([res.data.statuses[index]]);
             })
             .catch(err => {
                 console.log(err);
             })
     }
 
-    const tweetUser = twitterUserData.map(item => {
-        return (
-            <div key={item.id}>
-                <div className="card random-card">
-                    <img src={item.profile_image_url_https} className="card-user-img" alt="profile"></img>
-                    <div className="card-body random-body">
-                        <p className="card-text">@{item.screen_name}</p>
-                        <button className="btn btn-primary justify-content-center" data-toggle="modal" data-target="#tweet-modal" onClick={() => getRandomTweet(item.screen_name)}>Random Tweet</button>
-                    </div>
-                </div>
-            </div>
-        )
-    });
-
     return (
         <div>
             <h1 id="random-header">Get random Tweets</h1>
             <div className="container twitter-users">
-                {tweetUser}
+                <TwitterUserCard
+                    twitterUserData={twitterUserData}
+                    getRandomTweet={getRandomTweet}
+                />
             </div>
             <div className="modal" id="tweet-modal" tabIndex="-1">
                 <TweetModal
