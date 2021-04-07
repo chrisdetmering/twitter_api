@@ -10,6 +10,7 @@ function Random() {
     
     useEffect(() => {
         getTwitterUserData(twitterUsers);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const getTwitterUserData = async () => {
