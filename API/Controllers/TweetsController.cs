@@ -21,21 +21,21 @@ namespace API.Controllers
 
         [Route("search/{user}")]
         [HttpGet]
-        public Task<TweetModel> GetUserTweets(string user)
+        public TweetModel GetUserTweets(string user)
         {
             return _tweetProcessor.GetTweetsByUser(user);
         }
 
         [Route("user/{user}")]
         [HttpGet]
-        public Task<UserModel> GetUser(string user)
+        public UserModel GetUser(string user)
         {
             return _tweetProcessor.GetUserData(user);
         }
 
         [Route("random/{user}")]
         [HttpGet]
-        public Task<TweetModel> GetRandom(string user)
+        public TweetModel GetRandom(string user)
         {
             return _tweetProcessor.GetRandomTweet(user);
         }

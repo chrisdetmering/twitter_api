@@ -7,7 +7,9 @@ namespace API.Models
 {
     public class TweetModel
     {
-        public List<TweetUserModel> statuses { get; set; }
+        public TweetUserModel[] statuses { get; set; }
+
+        public override string ToString() => JsonSerializer.Serialize(this);
     }
 
     public class TweetUserModel
@@ -30,7 +32,6 @@ namespace API.Models
 
         public TweetExtendedEntities extended_entities { get; set; }
 
-        public override string ToString() => JsonSerializer.Serialize<TweetUserModel>(this);
     }
 
     public class TweetUser
