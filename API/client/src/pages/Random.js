@@ -1,16 +1,16 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import TweetModal from './TweetModal';
-import TwitterUserCard from './TwitterUserCard';
+import TweetModal from '../components/TweetModal';
+import TwitterUserCard from '../components/TwitterUserCard';
 
 function Random() {
     const [twitterUsers] = useState(["nhl", "nasa", "ConanObrien", "TheOnion", "mental_floss"]);
     const [twitterUserData, setTwitterUserData] = useState([]);
     const [randomTweet, setRandomTweet] = useState([]);
-    
+
     useEffect(() => {
         getTwitterUserData(twitterUsers);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const getTwitterUserData = async () => {

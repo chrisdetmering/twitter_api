@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-import Home from './components/Home';
-import Search from './components/Search';
-import Random from './components/Random';
+import Home from './pages/Home';
+import Search from './pages/Search';
+import Random from './pages/Random';
 
 function App() {
     return (

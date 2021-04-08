@@ -25,7 +25,7 @@ function DisplayCard({ twitterData }) {
     }
 
     const findVideoQuality = media => {
-        const videoQuality = "1280x720";
+        const videoQuality = "720";
         for (let i = 0; i < media.length; i++) {
             if (media[i].url.includes(videoQuality))
                 return i;
