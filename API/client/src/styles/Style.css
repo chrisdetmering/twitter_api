@@ -155,13 +155,20 @@ body {
 }
 
 .home-title {
-    background: url("../images/background.jpg");
+    background: url("../images/Lightened\ BG\ Image.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
     box-shadow:  0 5px 10px grey;
-
 }
+
+.page-footer {
+    bottom: 0px;
+    width: 100%;
+    height: 30px;
+    position: fixed;
+}
+
 
 
 

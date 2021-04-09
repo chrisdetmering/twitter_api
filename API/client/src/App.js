@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import Home from './pages/Home';
 import Search from './pages/Search';
 import Random from './pages/Random';
+import Footer from './components/Footer';
 
 function App() {
     return (
@@ -45,6 +46,9 @@ function App() {
                         <Home />
                     </Route>
                 </Switch>
+            </div>
+            <div>
+                <Footer />
             </div>
         </Router>);
 }
