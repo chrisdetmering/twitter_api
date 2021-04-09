@@ -10,7 +10,7 @@ function TwitterUserCard({ twitterUserData, getRandomTweet }) {
                     <div className="card-body random-body">
                         <p className="card-text">@{item.screen_name}</p>
                         <button
-                            className="btn btn-primary justify-content-center"
+                            className="btn btn-primary ml-1"
                             data-toggle="modal"
                             data-target="#tweet-modal"
                             onClick={() => getRandomTweet(item.screen_name)}>

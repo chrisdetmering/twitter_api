@@ -1,10 +1,48 @@
+* {
+    font-family: 'futura';
+}
+body {
+    background: rgb(180, 224, 240) !important;
+}
+
+#navbarNav {
+    justify-content: flex-end;
+}
+
+.navbar-brand {
+    font-family: "SignPainter";
+    font-size: 32px !important;
+    font-weight: bold;
+}
+
+.twitter-icon {
+    height: 32px;
+    width: 32px;
+    padding-left: 10px;
+    fill: #3BA9EE;
+}
+
+.twitter-verified {
+    fill: #3BA9EE;
+    margin: 0 0 10px 3px;
+}
+
+#home-header {
+    font-family: "SignPainter";
+    font-size: 84px !important;
+}
+
 #search-header {
-    padding: 50px;
+    margin: 120px 0 50px 0;
     text-align: center;
 }
 
+.search-input {
+    margin-bottom: 30px;
+}
+
 #search-card {
-    margin-top: 10px;
+    margin: 10px 0 10px 0;
     width: 37rem;
     object-fit: contain;
 }
@@ -81,31 +119,50 @@
 /* Random */
 
 .random-card {
-    width: 179px;
-    margin-bottom: 10px;
+    width: 180px;
+    margin-bottom: 35px;
     display: flex;
+    box-shadow:  0 5px 5px rgb(168, 168, 168);
+    border: none !important;
 }
 
 .twitter-users {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: space-evenly;
+    flex-flow: row wrap;
 }
 
 .card-user-img {
     height: 50px;
     width: 50px;
     border-radius: 50%;
-    padding: 5px;
+    margin: 10px 0 10px 20px;
 }
 
 #random-header {
-    padding: 50px;
+    margin: 120px 0 50px 0;
     text-align: center;
 }
 
 #random-card {
     margin-top: 10px;
 }
+
+/* Home */
+
+.home-container {
+    margin-top: 120px;
+}
+
+.home-title {
+    background: url("../images/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    box-shadow:  0 5px 10px grey;
+
+}
+
+
 
 

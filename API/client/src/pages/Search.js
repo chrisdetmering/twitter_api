@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { React, useState } from 'react';
+import { React, useEffect, useState } from 'react';
 import DisplayCard from '../components/DisplayCard';
 import '../styles/Style.css'
 
@@ -18,19 +18,40 @@ function Search() {
     const getTwitterData = async () => {
         axios.get(`/api/Tweets/search/${search}`)
             .then(res => {
+                // checkTwitterResponse(res.data.statuses);
                 setTwitterData(res.data.statuses);
-                console.log(res.data.statuses)
+                console.log(res.data.statuses);
             })
             .catch(err => {
                 console.log(err);
             })
     }
 
+    // useEffect(() => {
+    //     const checkTwitterResponse = twitterResponse => {
+    //         if (twitterResponse.length < 1) {
+    //             return (
+    //                 <div>
+    //                     <h3>Search term not found.</h3>
+    //                 </div>
+    //             )
+    //         } else {
+    //             return (
+    //                 <div className="container">
+    //                     <DisplayCard
+    //                         twitterData={twitterData}
+    //                     />
+    //                 </div>
+    //             )
+    //         }
+    //     }
+    // }, [twitterData]);
+
     return (
         <div>
             <h1 id="search-header">Search for your favourite Twitter user</h1>
             <form>
-                <div className="container">
+                <div className="container search-input">
                     <div className="row justify-content-center">
                         <div className="input-group col-6">
                             <input type="text"
@@ -54,6 +75,7 @@ function Search() {
                     twitterData={twitterData}
                 />
             </div>
+            {/* {checkTwitterResponse(twitterData)} */}
         </div>
     );
 }
