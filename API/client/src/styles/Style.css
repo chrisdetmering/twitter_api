@@ -10,15 +10,16 @@ body {
 }
 
 .navbar-brand {
-    font-family: "SignPainter";
+    font-family: "Mr Dafoe";
     font-size: 32px !important;
-    font-weight: bold;
+    color: rgb(45, 45, 45) !important;
+    /* font-weight: bold; */
 }
 
 .twitter-icon {
     height: 32px;
     width: 32px;
-    padding-left: 10px;
+    margin-left: 15px;
     fill: #3BA9EE;
 }
 
@@ -28,17 +29,29 @@ body {
 }
 
 #home-header {
-    font-family: "SignPainter";
+    font-family: "Mr Dafoe";
+    /* font-family: "SignPainter"; */
     font-size: 84px !important;
+    text-shadow: 1px 1px 1px grey;
+    color: rgb(45, 45, 45) !important;
+
+
 }
 
 #search-header {
     margin: 120px 0 50px 0;
     text-align: center;
+    text-shadow: 1px 1px 1px grey;
 }
 
 .search-input {
     margin-bottom: 30px;
+}
+
+.selector {
+    border: none;
+    margin: 0 5px 0 5px;
+
 }
 
 #search-card {
@@ -142,6 +155,8 @@ body {
 #random-header {
     margin: 120px 0 50px 0;
     text-align: center;
+    text-shadow: 1px 1px 1px grey;
+
 }
 
 #random-card {

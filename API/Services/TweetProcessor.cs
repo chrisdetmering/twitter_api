@@ -13,6 +13,8 @@ namespace API.Services
     {
         TweetModel GetTweetsByUser(string search);
 
+        TweetModel GetTweetsByKeyword(string keyword);
+
         UserModel GetUserData(string search);
 
         TweetModel GetRandomTweet(string user);
@@ -30,6 +32,15 @@ namespace API.Services
        public TweetModel GetTweetsByUser(string search)
         {
             var url = $"https://api.twitter.com/1.1/search/tweets.json?q=from:{search}&lang=en&count=15&include_entities=true&tweet_mode=extended&expansions=attachments.media_keys";
+
+            var twitterResponse = GetTweets(url);
+
+            return JsonSerializer.Deserialize<TweetModel>(twitterResponse.Result);
+        }
+
+        public TweetModel GetTweetsByKeyword(string keyword)
+        {
+            var url = $"https://api.twitter.com/1.1/search/tweets.json?q={keyword}&lang=en&result_type=popular&tweet_mode=extended&count=15";
 
             var twitterResponse = GetTweets(url);
 

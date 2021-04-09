@@ -6,8 +6,11 @@ import '../styles/Style.css'
 function Search() {
     const [search, setSearch] = useState('');
     const [twitterData, setTwitterData] = useState([]);
+    const [searchType, setSearchType] = useState("username");
 
     const handleChange = event => setSearch(event.target.value);
+
+    const setSearchTypeValue = (event) => setSearchType(event.target.value);
 
     const searchQueryInput = event => {
         event.preventDefault();
@@ -16,7 +19,7 @@ function Search() {
     }
 
     const getTwitterData = async () => {
-        axios.get(`/api/Tweets/search/${search}`)
+        axios.get(`/api/Tweets/${searchType}/${search}`)
             .then(res => {
                 // checkTwitterResponse(res.data.statuses);
                 setTwitterData(res.data.statuses);
@@ -49,7 +52,7 @@ function Search() {
 
     return (
         <div>
-            <h1 id="search-header">Search for your favourite Twitter user</h1>
+            <h1 id="search-header">Search Twitter</h1>
             <form>
                 <div className="container search-input">
                     <div className="row justify-content-center">
@@ -58,9 +61,15 @@ function Search() {
                                 className="form-control"
                                 value={search}
                                 onChange={handleChange}
-                                placeholder="Twitter username"
+                                placeholder="Twitter search"
                                 aria-label="username"
                                 aria-describedby="basic-addon2"></input>
+                            <select
+                                className="selector"
+                                onChange={setSearchTypeValue}>
+                                <option value={"username"}>User</option>
+                                <option value={"keyword"}>Keyword</option>
+                            </select>
                             <button className="input-group-text"
                                 type="submit"
                                 onClick={searchQueryInput}>

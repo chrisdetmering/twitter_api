@@ -19,11 +19,18 @@ namespace API.Controllers
 
         private readonly ITweetProcessor _tweetProcessor;
 
-        [Route("search/{user}")]
+        [Route("username/{user}")]
         [HttpGet]
         public TweetModel GetUserTweets(string user)
         {
             return _tweetProcessor.GetTweetsByUser(user);
+        }
+
+        [Route("keyword/{keyword}")]
+        [HttpGet]
+        public TweetModel GetKeywordTweets(string keyword)
+        {
+            return _tweetProcessor.GetTweetsByKeyword(keyword);
         }
 
         [Route("user/{user}")]
