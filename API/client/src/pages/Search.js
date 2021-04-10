@@ -70,7 +70,7 @@ function Search() {
                                 <option value={"username"}>User</option>
                                 <option value={"keyword"}>Keyword</option>
                             </select>
-                            <button className="input-group-text"
+                            <button className="btn btn-info"
                                 type="submit"
                                 onClick={searchQueryInput}>
                                 Search
@@ -79,10 +79,12 @@ function Search() {
                     </div>
                 </div>
             </form>
-            <div className="container">
+            <div className="container card-container">
+                <div>
                 <DisplayCard
                     twitterData={twitterData}
-                />
+                    />
+                </div>
             </div>
             {/* {checkTwitterResponse(twitterData)} */}
         </div>
