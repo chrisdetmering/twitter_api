@@ -9,15 +9,19 @@ function TweetCard({ twitterData }) {
 
     const displayMedia = item => {
         switch (tweetMediaType(item)) {
+
             case "video":
-                const videoQuality = findVideoQuality(item.extended_entities.media[0].video_info.variants)
-                return displayTweetVideo(item.extended_entities.media[0], videoQuality);
+                const media = item.extended_entities.media[0];
+                const variants = media.video_info.variants;
+                const videoQuality = findVideoQuality(variants);
+                return displayTweetVideo(variants, videoQuality);
 
             case "animated_gif":
-                return displayTweetVideo(item.extended_entities.media[0], 0);
+                return displayTweetVideo(media, 0);
 
             case "photo":
-                return displayTweetPhoto(item.entities.media[0])
+                const imageUrl = item.entities.media[0].media_url_https;
+                return displayTweetPhoto(imageUrl);
 
             default:
                 return;
@@ -37,22 +41,22 @@ function TweetCard({ twitterData }) {
         return 0;
     }
 
-    const displayTweetVideo = (media, index) => {
+    const displayTweetVideo = (variants, index) => {
         return (
             <div>
                 <ReactPlayer
                     controls={true}
                     className="body-video"
-                    url={media.video_info.variants[index].url}
+                    url={variants[index].url}
                 />
             </div>
         );
     }
 
-    const displayTweetPhoto = media => {
+    const displayTweetPhoto = imageUrl => {
         return (
-            <a href={media.media_url_https} target="_blank" rel="noopener noreferrer">
-                <img src={media.media_url_https} className="body-img card-img" alt="..."></img>
+            <a href={imageUrl} target="_blank" rel="noopener noreferrer">
+                <img src={imageUrl} className="body-img card-img" alt="..."></img>
             </a>
         );
     }

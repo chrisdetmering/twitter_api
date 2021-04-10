@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { React, useEffect, useState } from 'react';
+import { React, useState } from 'react';
 import TweetCard from '../components/TweetCard';
 import '../styles/Search.css';
 
@@ -44,7 +44,7 @@ function Search() {
                                 aria-label="username"
                                 aria-describedby="basic-addon2"></input>
                             <select
-                                className="selector"
+                                className="search-type-selector"
                                 onChange={setSearchTypeValue}>
                                 <option value={"username"}>User</option>
                                 <option value={"keyword"}>Keyword</option>
