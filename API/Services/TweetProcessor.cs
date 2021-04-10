@@ -75,14 +75,5 @@ namespace API.Services
 
             throw new Exception("error in TweetProcessor");
         }
-
-        //private string[] randomTweet(TweetModel twitterResponse)
-        //{
-        //    var random = new Random();
-
-        //    var index = random.Next(twitterResponse.Count);
-
-        //    return twitterResponse[index];
-        //}
     }
 }

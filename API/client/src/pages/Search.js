@@ -21,7 +21,6 @@ function Search() {
     const getTwitterData = async () => {
         axios.get(`/api/Tweets/${searchType}/${search}`)
             .then(res => {
-                // checkTwitterResponse(res.data.statuses);
                 setTwitterData(res.data.statuses);
                 console.log(res.data.statuses);
             })
@@ -29,26 +28,6 @@ function Search() {
                 console.log(err);
             })
     }
-
-    // useEffect(() => {
-    //     const checkTwitterResponse = twitterResponse => {
-    //         if (twitterResponse.length < 1) {
-    //             return (
-    //                 <div>
-    //                     <h3>Search term not found.</h3>
-    //                 </div>
-    //             )
-    //         } else {
-    //             return (
-    //                 <div className="container">
-    //                     <DisplayCard
-    //                         twitterData={twitterData}
-    //                     />
-    //                 </div>
-    //             )
-    //         }
-    //     }
-    // }, [twitterData]);
 
     return (
         <div>
@@ -86,7 +65,6 @@ function Search() {
                     />
                 </div>
             </div>
-            {/* {checkTwitterResponse(twitterData)} */}
         </div>
     );
 }
