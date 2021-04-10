@@ -1,5 +1,4 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import '../styles/Home.css';
 
 function Home() {
@@ -17,16 +16,6 @@ function Home() {
                 </p>
                 </div>
             </div>
-            <Router>
-                <div className="row nav-buttons">
-                    <div className="col-3">
-                        <button className="btn btn-info">Search Twitter</button>
-                    </div>
-                    <div className="col-3">
-                        <button className="btn btn-info">Random Tweets</button>
-                    </div>
-                </div>
-            </Router>
         </div>
     );
 }

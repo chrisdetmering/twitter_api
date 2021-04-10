@@ -16,15 +16,3 @@
     text-shadow: 1px 1px 2px grey;
     color: rgb(45, 45, 45) !important;
 }
-
-.nav-buttons {
-    justify-content: space-evenly;
-    margin-top: 50px;
-    height: 200px;
-}
-
-.nav-buttons button {
-    width: 100%;
-    height: 30%;
-    justify-content: center;
-}
