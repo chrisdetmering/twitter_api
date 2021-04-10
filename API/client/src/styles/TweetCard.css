@@ -1,0 +1,83 @@
+.card-container {
+    margin-bottom: 45px;
+}
+
+#search-card {
+    margin: 5px 0 5px 0;
+    width: 37rem;
+    object-fit: contain;
+}
+
+.card-name {
+    margin: 10px 0 0 10px;
+    display: inline-flex;
+    align-items: baseline;
+}
+
+.card-title, .card-subtitle {
+    margin-left: 10px;
+}
+
+.card-text {
+    font-weight: 500;
+}
+
+.card-body {
+    padding-top: 0px !important;
+    padding-bottom: 15px !important;
+}
+
+.profile-img {
+    border-radius: 50%;
+}
+
+.body-img {
+    height: 300px;
+    border-radius: 15px !important;
+    object-fit: cover;
+    object-position: center;
+    margin-top: 10px;
+}
+
+.body-video {
+    justify-content: center;
+    height: 100% !important ;
+    width: 100% !important;
+    margin-top: 10px;
+}
+
+.counts {
+    margin: 10px 0 0 0;
+    justify-content: space-evenly;
+}
+
+.retweet-count {
+    padding: 5px;
+    font-weight: 500;
+    transition: 250ms ease-in-out;
+}
+
+.retweet-count:hover {
+    cursor: not-allowed;
+    background-color: rgba(0, 128, 0, 0.05);
+    color: green;
+    border-radius: 10px;
+}
+
+.favorite-count {
+    padding: 5px;
+    font-weight: 500;
+    transition: 250ms ease-in-out;
+}
+
+.favorite-count:hover {
+    cursor: not-allowed;
+    background-color: rgba(255, 0, 0, 0.05);
+    color: red;
+    border-radius: 10px;
+}
+
+.twitter-verified {
+    fill: #3BA9EE;
+    margin: 0 0 10px 3px;
+}

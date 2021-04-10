@@ -3,8 +3,9 @@ import ReactPlayer from 'react-player';
 import { ReactComponent as VerifiedBadge } from '../images/Twitter_Verified_Badge.svg';
 import { ReactComponent as RetweetIcon } from '../images/Retweet.svg';
 import { ReactComponent as LikeIcon } from '../images/Like.svg';
+import '../styles/TweetCard.css';
 
-function DisplayCard({ twitterData }) {
+function TweetCard({ twitterData }) {
 
     const displayMedia = item => {
         switch (tweetMediaType(item)) {
@@ -91,7 +92,7 @@ function DisplayCard({ twitterData }) {
         let formattedDate = item.slice(4, 10);
         return formattedDate.indexOf("0") === 4 ? formattedDate.split("0").join("") : formattedDate;
     }
-    
+
 
     const checkVerifiedUser = user => {
         return user.verified
@@ -130,4 +131,4 @@ function DisplayCard({ twitterData }) {
     });
 }
 
-export default DisplayCard
+export default TweetCard

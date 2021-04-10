@@ -1,5 +1,6 @@
 import React from 'react';
-import DisplayCard from './DisplayCard';
+import TweetCard from './TweetCard';
+import '../styles/TweetModal.css';
 
 function TweetModal({ twitterData }) {
 
@@ -25,7 +26,7 @@ function TweetModal({ twitterData }) {
                     </button>
                 </div>
                 <div className="modal-body">
-                    <DisplayCard
+                    <TweetCard
                         twitterData={twitterData}
                     />
                 </div>

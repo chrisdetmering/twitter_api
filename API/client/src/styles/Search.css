@@ -1,0 +1,17 @@
+#search-header {
+    margin: 120px 0 50px 0;
+    text-align: center;
+    text-shadow: 1px 1px 2px grey;
+}
+
+.search-input {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+.selector {
+    border: none;
+    margin: 0 5px 0 5px;
+
+}

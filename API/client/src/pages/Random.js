@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import TweetModal from '../components/TweetModal';
 import TwitterUserCard from '../components/TwitterUserCard';
+import '../styles/Random.css';
 
 function Random() {
     const [twitterUsers] = useState(["nhl", "nasa", "ConanObrien", "TheOnion", "mental_floss"]);

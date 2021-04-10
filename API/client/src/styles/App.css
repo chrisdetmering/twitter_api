@@ -1,4 +1,21 @@
-.App {
+#navbarNav {
+    justify-content: flex-end;
+}
+
+.navbar-brand {
+    font-family: "Mr Dafoe";
+    font-size: 32px !important;
+    color: rgb(45, 45, 45) !important;
+}
+
+.twitter-icon {
+    height: 32px;
+    width: 32px;
+    margin-left: 15px;
+    fill: #3BA9EE;
+}
+
+/* .App {
   text-align: center;
 }
 
@@ -35,6 +52,6 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
 
 

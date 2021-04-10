@@ -1,0 +1,18 @@
+.home-container {
+    margin-top: 120px;
+}
+
+.home-title {
+    background: url("../images/Lightened\ BG\ Image.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    box-shadow:  0 5px 10px grey;
+}
+
+#home-header {
+    font-family: "Mr Dafoe";
+    font-size: 84px !important;
+    text-shadow: 1px 1px 2px grey;
+    color: rgb(45, 45, 45) !important;
+}

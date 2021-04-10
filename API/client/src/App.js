@@ -5,13 +5,14 @@ import Search from './pages/Search';
 import Random from './pages/Random';
 import Footer from './components/Footer';
 import { ReactComponent as TwitterLogo } from './images/Twitter_Logo.svg'
+import './styles/App.css';
 
 function App() {
     return (
         <Router>
             <div>
                 <div className="container-fluid">
-                    <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light shadow mb-5 bg-body rounded">
+                    <nav className="navbar fixed-top navbar-expand-md navbar-light bg-light shadow mb-5 bg-body rounded">
                         <span className="navbar-brand" href="/">
                             Happy-Tweet
                             <TwitterLogo className="twitter-icon" />

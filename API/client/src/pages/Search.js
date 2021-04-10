@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { React, useEffect, useState } from 'react';
-import DisplayCard from '../components/DisplayCard';
-import '../styles/Style.css'
+import TweetCard from '../components/TweetCard';
+import '../styles/Search.css';
 
 function Search() {
     const [search, setSearch] = useState('');
@@ -56,7 +56,7 @@ function Search() {
             <form>
                 <div className="container search-input">
                     <div className="row justify-content-center">
-                        <div className="input-group col-6">
+                        <div className="input-group col-12">
                             <input type="text"
                                 className="form-control"
                                 value={search}
@@ -81,7 +81,7 @@ function Search() {
             </form>
             <div className="container card-container">
                 <div>
-                <DisplayCard
+                    <TweetCard
                     twitterData={twitterData}
                     />
                 </div>
