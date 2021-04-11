@@ -17,7 +17,8 @@ function TweetCard({ twitterData }) {
                 return displayTweetVideo(variants, videoQuality);
 
             case "animated_gif":
-                return displayTweetVideo(media, 0);
+                const gif = item.extended_entities.media[0].video_info.variants;
+                return displayTweetVideo(gif, 0);
 
             case "photo":
                 const imageUrl = item.entities.media[0].media_url_https;

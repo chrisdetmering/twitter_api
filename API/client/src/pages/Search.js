@@ -21,11 +21,11 @@ function Search() {
     const getTwitterData = async () => {
         axios.get(`/api/Tweets/${searchType}/${search}`)
             .then(res => {
-                setTwitterData(res.data.statuses);
-                console.log(res.data.statuses);
+                setTwitterData(res.data);
+                console.log(res.data);
             })
             .catch(err => {
-                console.log(err);
+                console.log("This is from the server: " + err);
             })
     }
 

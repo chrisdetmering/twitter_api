@@ -5,14 +5,14 @@ using System.Text.Json.Serialization;
 
 namespace API.Models
 {
+    //public class TweetModel
+    //{
+    //    public TweetUserModel[] statuses { get; set; }
+
+
+    //}
+
     public class TweetModel
-    {
-        public TweetUserModel[] statuses { get; set; }
-
-        public override string ToString() => JsonSerializer.Serialize(this);
-    }
-
-    public class TweetUserModel
     {
         public long id { get; set; }
 
@@ -31,6 +31,8 @@ namespace API.Models
         public TweetEntities entities { get; set; }
 
         public TweetExtendedEntities extended_entities { get; set; }
+
+        public override string ToString() => JsonSerializer.Serialize(this);
 
     }
 

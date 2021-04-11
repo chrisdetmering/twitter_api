@@ -11,7 +11,7 @@ namespace API.Services
 {
     public interface ITweetProcessor
     {
-        TweetModel GetTweetsByUser(string search);
+        List<TweetModel> GetTweetsByUser(string search);
 
         TweetModel GetTweetsByKeyword(string keyword);
 
@@ -29,13 +29,14 @@ namespace API.Services
             _client = apiHelper.InitializeClient();
         }
 
-       public TweetModel GetTweetsByUser(string search)
+       public List<TweetModel> GetTweetsByUser(string search)
         {
-            var url = $"https://api.twitter.com/1.1/search/tweets.json?q=from:{search}&lang=en&count=15&include_entities=true&tweet_mode=extended&expansions=attachments.media_keys";
+            var url = $"https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name={search}&tweet_mode=extended&count=15";
+            //var url = $"https://api.twitter.com/1.1/search/tweets.json?q=from:{search}&lang=en&count=15&include_entities=true&tweet_mode=extended&expansions=attachments.media_keys";
 
             var twitterResponse = GetTweets(url);
 
-            return JsonSerializer.Deserialize<TweetModel>(twitterResponse.Result);
+            return JsonSerializer.Deserialize<List<TweetModel>>(twitterResponse.Result);
         }
 
         public TweetModel GetTweetsByKeyword(string keyword)

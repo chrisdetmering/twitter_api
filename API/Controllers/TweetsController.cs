@@ -21,9 +21,16 @@ namespace API.Controllers
 
         [Route("username/{user}")]
         [HttpGet]
-        public TweetModel GetUserTweets(string user)
+        public IActionResult GetUserTweets(string user)
         {
-            return _tweetProcessor.GetTweetsByUser(user);
+            try
+            {
+                return Ok(_tweetProcessor.GetTweetsByUser(user));
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, e.Message);
+            }
         }
 
         [Route("keyword/{keyword}")]
