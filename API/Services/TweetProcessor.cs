@@ -11,7 +11,7 @@ namespace API.Services
 {
     public interface ITweetProcessor
     {
-        List<TweetModel> GetTweetsByUser(string search);
+        Task<TweetModel> GetTweetsByUser(string search);
 
         TweetStatusesModel GetTweetsByKeyword(string keyword);
 
@@ -29,13 +29,29 @@ namespace API.Services
             _client = apiHelper.InitializeClient();
         }
 
-       public List<TweetModel> GetTweetsByUser(string search)
+       public async Task<TweetModel> GetTweetsByUser(string search)
         {
-            var url = $"https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name={search}&tweet_mode=extended&count=15";
+            using (var response = await _client.GetAsync($"https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name={search}&tweet_mode=extended&count=15"))
+            {
+                //var twitterResponse = GetTweets(url);
+                if (response.IsSuccessStatusCode)
+                {
+                    string twitterResponse = await response.Content.ReadAsStringAsync();
+                    return JsonSerializer.Deserialize<TweetModel>(twitterResponse);
+                    //return twitterResponse;
+                }
+                throw new Exception("error in TweetProcessor");
+            }
+        }
 
-            var twitterResponse = GetTweets(url);
+        private async Task<string> GetTweets(string url)
+        {
+            using var response = await _client.GetAsync(url);
 
-            return JsonSerializer.Deserialize<List<TweetModel>>(twitterResponse.Result);
+            if (response.IsSuccessStatusCode)
+                return await response.Content.ReadAsStringAsync();
+
+            throw new Exception("error in TweetProcessor");
         }
 
         public TweetStatusesModel GetTweetsByKeyword(string keyword)
@@ -66,14 +82,14 @@ namespace API.Services
 
         }
 
-        private async Task<string> GetTweets(string url)
-        {
-            using var response = await _client.GetAsync(url);
+        //private async Task<string> GetTweets(string url)
+        //{
+        //    using var response = await _client.GetAsync(url);
 
-            if (response.IsSuccessStatusCode)
-                return await response.Content.ReadAsStringAsync();
+        //    if (response.IsSuccessStatusCode)
+        //        return await response.Content.ReadAsStringAsync();
 
-            throw new Exception("error in TweetProcessor");
-        }
+        //    throw new Exception("error in TweetProcessor");
+        //}
     }
 }
