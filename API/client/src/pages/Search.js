@@ -7,6 +7,7 @@ function Search() {
     const [search, setSearch] = useState('');
     const [twitterData, setTwitterData] = useState([]);
     const [searchType, setSearchType] = useState("username");
+    const [errorMessage, setErrorMessage] = useState("");
 
     const handleChange = event => setSearch(event.target.value);
 
@@ -20,13 +21,22 @@ function Search() {
 
     const getTwitterData = async () => {
         axios.get(`/api/Tweets/${searchType}/${search}`)
-            .then(res => {
-                searchType === "username" ? setTwitterData(res.data) : setTwitterData(res.data.statuses);
-                console.log(res.data);
+            .then(response => {
+                handleTwitterData(response)
             })
-            .catch(err => {
-                console.log("This is from the server: " + err);
+            .catch(error => {
+                handleTwitterError(error)
             })
+    }
+
+    const handleTwitterData = response => {
+        searchType === "username" ? setTwitterData(response.data) : setTwitterData(response.data.statuses);
+        setErrorMessage("");
+    }
+
+    const handleTwitterError = error => {
+        setErrorMessage(error.response.data)
+        setTwitterData([])
     }
 
     return (
@@ -58,10 +68,13 @@ function Search() {
                     </div>
                 </div>
             </form>
+            <div className="error-message">
+                <h5>{errorMessage}</h5>
+            </div>
             <div className="container card-container">
                 <div>
                     <TweetCard
-                    twitterData={twitterData}
+                        twitterData={twitterData}
                     />
                 </div>
             </div>

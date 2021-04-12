@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using API.Models;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using System.Net;
 
 namespace API.Services
 {
@@ -37,7 +38,12 @@ namespace API.Services
                 
                 return JsonConvert.DeserializeObject<List<TweetModel>>(twitterResponse);
             }
-                throw new Exception("error in TweetProcessor");
+
+            if (response.StatusCode == HttpStatusCode.NotFound)
+            {
+                throw new Exception($"User '{search}' was not found. Please try again.");
+            }
+            throw new Exception($"Access Denied. '{search}' is not available. Please try again.");
         }
 
         public async Task<TweetStatusesModel> GetTweetsByKeyword(string keyword)
@@ -80,7 +86,6 @@ namespace API.Services
             }
 
             throw new Exception("error in TweetProcessor");
-
         }
     }
 }

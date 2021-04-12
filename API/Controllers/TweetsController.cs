@@ -26,7 +26,7 @@ namespace API.Controllers
             }
             catch (Exception e)
             {
-                return StatusCode(500, e.Message);
+                return StatusCode(404, e.Message);
             }
         }
 
@@ -40,7 +40,7 @@ namespace API.Controllers
             }
             catch (Exception e)
             {
-                return StatusCode(500, e.Message);
+                return StatusCode(404, e.Message);
             }
         }
 
