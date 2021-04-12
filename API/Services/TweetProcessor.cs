@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Net.Http;
-using System.Text.Json;
 using System.Threading.Tasks;
 using API.Models;
-using System.Text.Json.Serialization;
-using System.Linq;
 using System.Collections.Generic;
 using Newtonsoft.Json;
-using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace API.Services
 {
@@ -15,11 +11,11 @@ namespace API.Services
     {
         Task<List<TweetModel>> GetTweetsByUser(string search);
 
-        TweetStatusesModel GetTweetsByKeyword(string keyword);
+        Task<TweetStatusesModel> GetTweetsByKeyword(string keyword);
 
-        UserModel GetUserData(string search);
+        Task<UserModel> GetUserData(string search);
 
-        TweetStatusesModel GetRandomTweet(string user);
+        Task<TweetStatusesModel> GetRandomTweet(string user);
     }
 
     public class TweetProcessor : ITweetProcessor
@@ -38,58 +34,53 @@ namespace API.Services
             if (response.IsSuccessStatusCode)
             {
                 var twitterResponse = await response.Content.ReadAsStringAsync();
-
+                
                 return JsonConvert.DeserializeObject<List<TweetModel>>(twitterResponse);
             }
                 throw new Exception("error in TweetProcessor");
         }
 
-        private async Task<string> GetTweets(string url)
+        public async Task<TweetStatusesModel> GetTweetsByKeyword(string keyword)
         {
-            using var response = await _client.GetAsync(url);
+            var response = await _client.GetAsync($"https://api.twitter.com/1.1/search/tweets.json?q={keyword}&lang=en&result_type=popular&tweet_mode=extended&count=15");
 
             if (response.IsSuccessStatusCode)
-                return await response.Content.ReadAsStringAsync();
+            {
+                var twitterResponse = await response.Content.ReadAsStringAsync();
+
+                return JsonConvert.DeserializeObject<TweetStatusesModel>(twitterResponse);
+            }
 
             throw new Exception("error in TweetProcessor");
         }
 
-        public TweetStatusesModel GetTweetsByKeyword(string keyword)
+        public async Task<UserModel> GetUserData(string search)
         {
-            var url = $"https://api.twitter.com/1.1/search/tweets.json?q={keyword}&lang=en&result_type=popular&tweet_mode=extended&count=15";
+            var response = await _client.GetAsync($"https://api.twitter.com/1.1/users/show.json?screen_name={search}");
 
-            var twitterResponse = GetTweets(url);
+            if (response.IsSuccessStatusCode)
+            {
+                var twitterResponse = await response.Content.ReadAsStringAsync();
 
-            return JsonSerializer.Deserialize<TweetStatusesModel>(twitterResponse.Result);
+                return JsonConvert.DeserializeObject<UserModel>(twitterResponse);
+            }
+
+            throw new Exception("error in TweetProcessor");
         }
 
-        public UserModel GetUserData(string search)
+        public async Task<TweetStatusesModel> GetRandomTweet(string search)
         {
-            var url = $"https://api.twitter.com/1.1/users/show.json?screen_name={search}";
+            var response = await _client.GetAsync($"https://api.twitter.com/1.1/search/tweets.json?q=from:{search}&lang=en&count=50&include_entities=true&tweet_mode=extended&expansions=attachments.media_keys");
 
-            var twitterResponse = GetTweets(url);
+            if (response.IsSuccessStatusCode)
+            {
+                var twitterResponse = await response.Content.ReadAsStringAsync();
 
-            return JsonSerializer.Deserialize<UserModel>(twitterResponse.Result);
-        }
+                return JsonConvert.DeserializeObject<TweetStatusesModel>(twitterResponse);
+            }
 
-        public TweetStatusesModel GetRandomTweet(string search)
-        {
-            var url = $"https://api.twitter.com/1.1/search/tweets.json?q=from:{search}&lang=en&count=50&include_entities=true&tweet_mode=extended&expansions=attachments.media_keys";
-
-            var twitterResponse = GetTweets(url);
-
-             return JsonSerializer.Deserialize<TweetStatusesModel>(twitterResponse.Result);
+            throw new Exception("error in TweetProcessor");
 
         }
-
-        //private async Task<string> GetTweets(string url)
-        //{
-        //    using var response = await _client.GetAsync(url);
-
-        //    if (response.IsSuccessStatusCode)
-        //        return await response.Content.ReadAsStringAsync();
-
-        //    throw new Exception("error in TweetProcessor");
-        //}
     }
 }
