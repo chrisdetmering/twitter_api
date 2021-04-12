@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/TwitterUserCard.css';
 
 function TwitterUserCard({ twitterUserData, getRandomTweet }) {
 

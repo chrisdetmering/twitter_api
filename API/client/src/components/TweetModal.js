@@ -1,6 +1,5 @@
 import React from 'react';
 import TweetCard from './TweetCard';
-import '../styles/TweetModal.css';
 
 function TweetModal({ twitterData }) {
 

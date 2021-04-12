@@ -28,9 +28,9 @@ namespace API.Services
             _client = apiHelper.InitializeClient();
         }
 
-       public async Task<List<TweetModel>> GetTweetsByUser(string search)
+        public async Task<List<TweetModel>> GetTweetsByUser(string user)
         {
-            var response = await _client.GetAsync($"https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name={search}&tweet_mode=extended&count=15");
+            var response = await _client.GetAsync($"https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name={user}&tweet_mode=extended&count=15");
 
             if (response.IsSuccessStatusCode)
             {
@@ -41,9 +41,9 @@ namespace API.Services
 
             if (response.StatusCode == HttpStatusCode.NotFound)
             {
-                throw new Exception($"User '{search}' was not found. Please try again.");
+                throw new Exception($"User '{user}' was not found. Please try again.");
             }
-            throw new Exception($"Access Denied. '{search}' is not available. Please try again.");
+            throw new Exception($"Access Denied. '{user}' is not available. Please try again.");
         }
 
         public async Task<TweetStatusesModel> GetTweetsByKeyword(string keyword)
@@ -74,9 +74,9 @@ namespace API.Services
             throw new Exception("error in TweetProcessor");
         }
 
-        public async Task<TweetStatusesModel> GetRandomTweet(string search)
+        public async Task<TweetStatusesModel> GetRandomTweet(string user)
         {
-            var response = await _client.GetAsync($"https://api.twitter.com/1.1/search/tweets.json?q=from:{search}&lang=en&count=50&include_entities=true&tweet_mode=extended&expansions=attachments.media_keys");
+            var response = await _client.GetAsync($"https://api.twitter.com/1.1/search/tweets.json?q=from:{user}&lang=en&count=50&include_entities=true&tweet_mode=extended&expansions=attachments.media_keys");
 
             if (response.IsSuccessStatusCode)
             {
