@@ -32,7 +32,6 @@ namespace API.Services
        public List<TweetModel> GetTweetsByUser(string search)
         {
             var url = $"https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name={search}&tweet_mode=extended&count=15";
-            //var url = $"https://api.twitter.com/1.1/search/tweets.json?q=from:{search}&lang=en&count=15&include_entities=true&tweet_mode=extended&expansions=attachments.media_keys";
 
             var twitterResponse = GetTweets(url);
 

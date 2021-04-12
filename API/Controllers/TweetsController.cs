@@ -49,9 +49,16 @@ namespace API.Controllers
 
         [Route("user/{user}")]
         [HttpGet]
-        public UserModel GetUser(string user)
+        public IActionResult GetUser(string user)
         {
-            return _tweetProcessor.GetUserData(user);
+            try
+            {
+                return Ok(_tweetProcessor.GetUserData(user));
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, e.Message);
+            }
         }
 
         [Route("random/{user}")]
