@@ -35,9 +35,16 @@ namespace API.Controllers
 
         [Route("keyword/{keyword}")]
         [HttpGet]
-        public TweetModel GetKeywordTweets(string keyword)
+        public IActionResult GetKeywordTweets(string keyword)
         {
-            return _tweetProcessor.GetTweetsByKeyword(keyword);
+            try
+            {
+                return Ok(_tweetProcessor.GetTweetsByKeyword(keyword));
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, e.Message);
+            }
         }
 
         [Route("user/{user}")]
@@ -49,9 +56,16 @@ namespace API.Controllers
 
         [Route("random/{user}")]
         [HttpGet]
-        public TweetModel GetRandom(string user)
+        public IActionResult GetRandom(string user)
         {
-            return _tweetProcessor.GetRandomTweet(user);
+            try
+            {
+            return Ok(_tweetProcessor.GetRandomTweet(user));
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, e.Message);
+            }
         }
     }
 }

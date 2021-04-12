@@ -98,11 +98,8 @@ function TweetCard({ twitterData }) {
         return formattedDate.indexOf("0") === 4 ? formattedDate.split("0").join("") : formattedDate;
     }
 
-
     const checkVerifiedUser = user => {
-        return user.verified
-            ? <VerifiedBadge className="twitter-verified" />
-            : null;
+        return user.verified ? <VerifiedBadge className="twitter-verified" /> : null;
     }
 
     return twitterData.map(item => {

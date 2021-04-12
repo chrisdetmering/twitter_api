@@ -21,7 +21,7 @@ function Search() {
     const getTwitterData = async () => {
         axios.get(`/api/Tweets/${searchType}/${search}`)
             .then(res => {
-                setTwitterData(res.data);
+                searchType === "username" ? setTwitterData(res.data) : setTwitterData(res.data.statuses);
                 console.log(res.data);
             })
             .catch(err => {
