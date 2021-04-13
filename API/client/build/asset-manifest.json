@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.1ff6a3ea.chunk.css",
+    "main.js": "/static/js/main.6cb507be.chunk.js",
+    "main.js.map": "/static/js/main.6cb507be.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.03887cff.js",
+    "runtime-main.js.map": "/static/js/runtime-main.03887cff.js.map",
+    "static/css/2.ef9168ec.chunk.css": "/static/css/2.ef9168ec.chunk.css",
+    "static/js/2.1b9858eb.chunk.js": "/static/js/2.1b9858eb.chunk.js",
+    "static/js/2.1b9858eb.chunk.js.map": "/static/js/2.1b9858eb.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.ef9168ec.chunk.css.map": "/static/css/2.ef9168ec.chunk.css.map",
+    "static/css/main.1ff6a3ea.chunk.css.map": "/static/css/main.1ff6a3ea.chunk.css.map",
+    "static/js/2.1b9858eb.chunk.js.LICENSE.txt": "/static/js/2.1b9858eb.chunk.js.LICENSE.txt",
+    "static/media/Home.css": "/static/media/Lightened BG Image.0119af48.png",
+    "static/media/Like.b3bea66b.svg": "/static/media/Like.b3bea66b.svg",
+    "static/media/Retweet.1a10335b.svg": "/static/media/Retweet.1a10335b.svg",
+    "static/media/Twitter_Logo.3c7e2e2e.svg": "/static/media/Twitter_Logo.3c7e2e2e.svg",
+    "static/media/Twitter_Verified_Badge.71748a31.svg": "/static/media/Twitter_Verified_Badge.71748a31.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.03887cff.js",
+    "static/css/2.ef9168ec.chunk.css",
+    "static/js/2.1b9858eb.chunk.js",
+    "static/css/main.1ff6a3ea.chunk.css",
+    "static/js/main.6cb507be.chunk.js"
+  ]
+}
