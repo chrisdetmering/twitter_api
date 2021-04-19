@@ -7,21 +7,21 @@ import '../styles/TweetCard.css';
 
 function TweetCard({ twitterData }) {
 
-    const displayMedia = item => {
-        switch (tweetMediaType(item)) {
+    const displayMedia = twitterData => {
+        switch (tweetMediaType(twitterData)) {
 
             case "video":
-                const media = item.extended_entities.media[0];
+                const media = twitterData.extended_entities.media[0];
                 const variants = media.video_info.variants;
                 const videoQuality = findVideoQuality(variants);
                 return displayTweetVideo(variants, videoQuality);
 
             case "animated_gif":
-                const gif = item.extended_entities.media[0].video_info.variants;
+                const gif = twitterData.extended_entities.media[0].video_info.variants;
                 return displayTweetVideo(gif, 0);
 
             case "photo":
-                const imageUrl = item.entities.media[0].media_url_https;
+                const imageUrl = twitterData.entities.media[0].media_url_https;
                 return displayTweetPhoto(imageUrl);
 
             default:
@@ -29,8 +29,8 @@ function TweetCard({ twitterData }) {
         }
     };
 
-    const tweetMediaType = item => {
-        if (item.extended_entities) return item.extended_entities.media[0].type;
+    const tweetMediaType = twitterData => {
+        if (twitterData.extended_entities) return twitterData.extended_entities.media[0].type;
     }
 
     const findVideoQuality = media => {
@@ -62,22 +62,22 @@ function TweetCard({ twitterData }) {
         );
     }
 
-    const formatCounts = item => {
+    const formatCounts = twitterData => {
         let formattedCounts = 0;
-        if (item > 999) {
-            formattedCounts = item / 1000
+        if (twitterData > 999) {
+            formattedCounts = twitterData / 1000
             return ` ${formattedCounts.toFixed(1)}K`
         }
         else
-            return ` ${item}`;
+            return ` ${twitterData}`;
     }
 
-    const formatFullText = (item, textRange, urls) => {
+    const formatFullText = (twitterData, textRange, urls) => {
         if (urls.length < 1) {
             return (
                 <div>
                     <p className="card-text">
-                        {item.slice(textRange[0], textRange[1])}
+                        {twitterData.slice(textRange[0], textRange[1])}
                     </p>
                 </div>
             )
@@ -85,7 +85,7 @@ function TweetCard({ twitterData }) {
             return (
                 <div>
                     <p className="card-text">
-                        {item.slice(textRange[0], urls[0].indices[0])}
+                        {twitterData.slice(textRange[0], urls[0].indices[0])}
                         <a href={urls[0].url} target="_blank" rel="noopener noreferrer">{urls[0].display_url}</a>
                     </p>
                 </div>
@@ -93,8 +93,8 @@ function TweetCard({ twitterData }) {
         }
     }
 
-    const formatDate = item => {
-        let formattedDate = item.slice(4, 10);
+    const formatDate = twitterData => {
+        let formattedDate = twitterData.slice(4, 10);
         return formattedDate.indexOf("0") === 4 ? formattedDate.split("0").join("") : formattedDate;
     }
 
@@ -102,35 +102,40 @@ function TweetCard({ twitterData }) {
         return user.verified ? <VerifiedBadge className="twitter-verified" /> : null;
     }
 
-    return twitterData.map(item => {
-        return (
-            <div className="container" key={item.id}>
-                <div className="row justify-content-center">
-                    <div className="card" id="search-card">
-                        <div className="card-name">
-                            <img src={item.user.profile_image_url_https} className="profile-img" alt="..."></img>
-                            <h5 className="card-title"><b>{item.user.name}</b></h5><span>{checkVerifiedUser(item.user)}</span>
-                            <h6 className="card-subtitle mt-0 text-muted">@{item.user.screen_name} • {formatDate(item.created_at)}</h6>
-                        </div>
-                        <div className="card-body">
-                            {formatFullText(item.full_text, item.display_text_range, item.entities.urls)}
-                            {displayMedia(item)}
-                            <div className="counts row">
-                                <span className="retweet-count">
-                                    <RetweetIcon />
-                                    {formatCounts(item.retweet_count)}
-                                </span>
-                                <span className="favorite-count">
-                                    <LikeIcon />
-                                    {formatCounts(item.favorite_count)}
-                                </span>
-                            </div>
+    console.log(twitterData);
+
+    if (!twitterData.id) {
+        return null; 
+    }
+
+    return (
+        <div className="container" key={twitterData.id}>
+            <div className="row justify-content-center">
+                <div className="card" id="search-card">
+                    <div className="card-name">
+                        <img src={twitterData.user.profile_image_url_https} className="profile-img" alt="..."></img>
+                        <h5 className="card-title"><b>{twitterData.user.name}</b></h5><span>{checkVerifiedUser(twitterData.user)}</span>
+                        <h6 className="card-subtitle mt-0 text-muted">@{twitterData.user.screen_name} • {formatDate(twitterData.created_at)}</h6>
+                    </div>
+                    <div className="card-body">
+                        {formatFullText(twitterData.full_text, twitterData.display_text_range, twitterData.entities.urls)}
+                        {displayMedia(twitterData)}
+                        <div className="counts row">
+                            <span className="retweet-count">
+                                <RetweetIcon />
+                                {formatCounts(twitterData.retweet_count)}
+                            </span>
+                            <span className="favorite-count">
+                                <LikeIcon />
+                                {formatCounts(twitterData.favorite_count)}
+                            </span>
                         </div>
                     </div>
                 </div>
             </div>
-        )
-    });
+        </div>
+    );
+    
 }
 
 export default TweetCard
